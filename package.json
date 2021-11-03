@@ -1,0 +1,10 @@
+{
+  "name": "WeShoot",
+  "version": "1.0.0",
+  "description": "Photo Tours ",
+  "main": "index.js",
+  "repository": "https://lucamicheli@github.com/WeShoot/tours.git",
+  "author": "WeShoot",
+  "license": "MIT",
+  "private": null
+}
