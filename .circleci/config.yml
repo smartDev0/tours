@@ -14,12 +14,9 @@ executors:
 default:
   common-jobs: &common-jobs
     jobs:
-      - danger:
-          context: ci
       - deploy-staging:
           context:
-            - ci
-            - landing
+            - tours
           filters:
             branches:
               only:
@@ -126,7 +123,6 @@ workflows:
           filters:
             branches:
               only:
-                - master
                 - staging
   release:
     <<: *common-jobs
