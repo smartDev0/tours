@@ -1,0 +1,32 @@
+@import '../scss/bootstrap-config';
+
+.link {
+    color: inherit;
+    text-decoration: none;
+    transition: .2s all linear;
+
+    &:hover {
+        color: $font-color;;
+        text-decoration: none;
+    }
+
+    &-external {
+        color: inherit;
+    }
+
+    &-underline {
+        border-bottom: 3px solid #4D4D4D30;
+
+        &:hover {
+            border-bottom-color: $font-color;
+        }
+    }
+
+    &-wrapper {
+        border: 0;
+
+        &:hover {
+            color: $font-color;
+        }
+    }
+}
