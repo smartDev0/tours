@@ -9,6 +9,7 @@ import '../scss/main.scss';
 import '../scss/vender.css'
 
 import backgroundVideo from './../../static/aurora-boreale-viaggio-fotografico-norvegia.mp4'
+import CategoryCard from "../components/CategoryCard";
 
 const IndexPage = ({ path }) => {
   return (
@@ -30,6 +31,40 @@ const IndexPage = ({ path }) => {
           </Row>
         </Container>
       </BackgroundVideo>
+      <div style={{ backgroundColor: 'white' }}>
+        <Container fluid="xl" className="margin_60">
+          <Row className="small-gutters">
+            <Col md={6} sm={12}>
+              <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_1.jpg'}>
+                <Typography variant='heading2'>Special Offers</Typography>
+                <Typography>1150 Locations</Typography>
+              </CategoryCard>
+            </Col>
+            <Col md={6} sm={12}>
+              <Row className="small-gutters mt-md-0 mt-sm-2">
+                <Col sm={6}>
+                  <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_2.jpg'}>
+                    <Typography variant='heading2'>Tours</Typography>
+                    <Typography>1150 Locations</Typography>
+                  </CategoryCard>
+                </Col>
+                <Col sm={6}>
+                  <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_2.jpg'}>
+                    <Typography variant='heading2'>Hotels</Typography>
+                    <Typography>1150 Locations</Typography>
+                  </CategoryCard>
+                </Col>
+                <Col sm={12} className="mt-sm-2">
+                  <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_4.jpg'}>
+                    <Typography variant='heading2'>Hotels</Typography>
+                    <Typography>1150 Locations</Typography>
+                  </CategoryCard>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </>
   )
 }

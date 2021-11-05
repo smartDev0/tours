@@ -1,0 +1,74 @@
+@import '../scss/bootstrap-config';
+
+.container {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+
+
+
+    img {
+        transform: scale(1.05);
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: scale(1);
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        background: 0 0;
+        background: -webkit-linear-gradient(top, transparent, #000);
+        background: linear-gradient(to bottom, transparent, #000);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        line-height: 1;
+        padding: 100px 20px 20px 20px;
+
+        h2 {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 21px;
+            font-size: 1.3125rem;
+            margin: 0;
+            transform: translateY(20px) translateZ(0);
+            transition: all .3s cubic-bezier(.77, 0, .175, 1);
+        }
+
+        p {
+            color: #fff;
+            opacity: 0;
+            margin: 0;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: normal;
+            font-weight: 500;
+            transform: translateY(20px) translateZ(0);
+            transition: all .3s cubic-bezier(.77, 0, .175, 1);
+        }
+    }
+
+    &:hover {
+        color: #111;
+        text-decoration: none;
+        outline: 0;
+
+        p {
+            opacity: .8;
+            transition-delay: .2s;
+            transform: translateY(0) translateZ(0);
+        }
+
+        h2 {
+            transform: translateY(-5px) translateZ(0);
+        }
+    }
+}
