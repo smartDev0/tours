@@ -7,12 +7,11 @@ jobs:
       - run:
           name: Installing AWS CLI
           command:
-            sudo apt-get update
             sudo apt install python3-pip
             sudo pip3 install awsebcli
       - run: cd ./app && pm install && pm run build
       - run: aws s3 sync ./app/build s3://weshoot.it/
-      
+
 workflows:
   version: 2
   execute_bulk:
