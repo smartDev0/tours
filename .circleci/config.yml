@@ -16,14 +16,6 @@ default:
     jobs:
       - danger:
           context: ci
-      - deploy-master:
-          context:
-            - ci
-            - landing
-          filters:
-            branches:
-              only:
-                - master
       - deploy-staging:
           context:
             - ci
