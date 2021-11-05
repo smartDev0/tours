@@ -93,9 +93,6 @@ jobs:
           key: yarn-packages-v20-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run:
-          name: Run danger
-          command: yarn danger ci
 
 #  deploy-master:
 #    environment:
