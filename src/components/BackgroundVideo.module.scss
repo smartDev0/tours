@@ -1,0 +1,60 @@
+@import '../scss/bootstrap-config';
+
+.container {
+    background-color: $standard;
+    padding-bottom: 282.5px;
+    padding: 13rem 0 8.6rem;
+    min-height: calc(80vh - 22rem);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .overlay {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+
+        .video_play {
+            animation-name: fadeIn;
+            left: 50%;
+            min-height: 100%;
+            min-width: 100%;
+            position: absolute;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+    .gradient {
+        background: linear-gradient(180deg, rgba(11, 12, 27, 0) 0%, rgba(#000000, 0.3) 100%);
+    }
+}
+
+.theme {
+    &-light {
+        background: $grey-100;
+        color: $body-color;
+    }
+
+    &-dark {
+        background: $standard;
+        color: $white;
+    }
+}
+
+.centered {
+    text-align: center;
+}
