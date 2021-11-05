@@ -94,14 +94,6 @@ jobs:
           paths:
             - ~/.cache/yarn
 
-#  deploy-master:
-#    environment:
-#      AWS_S3_BUCKET: weshoot.it
-#      AWS_CDN_DISTRIBUTION_ID: E21MX2VH8OB6LF
-#      GATSBY_ACTIVE_ENV: production
-#      GATSBY_SITE_URL: "https://www.weshoot.it"
-#    <<: *common-deploy
-
   deploy-staging:
     environment:
       AWS_S3_BUCKET: staging.weshoot.it
