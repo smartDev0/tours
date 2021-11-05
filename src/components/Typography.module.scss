@@ -1,12 +1,11 @@
 @import "../scss/bootstrap-config";
 
 .root {
-    margin: 0;
+    // margin: 0;
     white-space: break-spaces;
 }
 
 .display1 {
-    font-family: $primary-font-family;
     font-size: 120px;
     font-weight: 700;
     letter-spacing: 0;
@@ -14,7 +13,6 @@
 }
 
 .display2 {
-    font-family: $primary-font-family;
     font-size: 88px;
     font-weight: 700;
     letter-spacing: 0;
@@ -23,14 +21,12 @@
 
 .display3 {
     color: $white;
-    font-family: $subtitle-font-family;
     font-size: 24px;
     font-weight: 400;
     letter-spacing: 0;
 }
 
 .heading1 {
-    font-family: $primary-font-family;
     font-weight: 800;
     font-size: 54px;
     line-height: 60px;
@@ -48,7 +44,6 @@
 }
 
 .heading2 {
-    font-family: $secondary-font-family;
     font-size: 48px;
     font-weight: 800;
     letter-spacing: 0;
@@ -66,12 +61,11 @@
 }
 
 .heading3 {
-    font-family: $primary-font-family;
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 1;
     line-height: 32px;
-    color: #121217;
+    color: $white;
 
     @include media-breakpoint-up(md) {
         font-size: 32px;
@@ -87,7 +81,6 @@
 }
 
 .heading4 {
-    font-family: $description-font-family;
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 0.8px;
@@ -100,7 +93,6 @@
 }
 
 .heading5 {
-    font-family: $primary-font-family;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -112,7 +104,6 @@
 }
 
 .heading6 {
-    font-family: $description-font-family;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 0.3px;
@@ -121,12 +112,11 @@
 }
 
 .intro {
-    font-family: $primary-font-family;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.5px;
     line-height: 22px;
-
+    text-transform: uppercase;
     @include media-breakpoint-up(md) {
         font-size: 14px;
         letter-spacing: 0.8px;
@@ -134,7 +124,6 @@
 }
 
 .body {
-    font-family: $description-font-family;
     font-size: 16px;
     font-style: normal;
     font-weight: normal;
@@ -147,7 +136,6 @@
 }
 
 .small {
-    font-family: $primary-font-family;
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 1px;
@@ -156,7 +144,6 @@
 }
 
 .large {
-    font-family: $secondary-font-family;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1.25px;
@@ -164,7 +151,6 @@
 }
 
 .handwritten {
-    font-family: "AntroVectra";
     font-size: 36px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -172,12 +158,6 @@
 }
 
 .blockquote {
-    // font-family: $secondary-font-family;
-    // font-size: 17px;
-    // font-weight: 300;
-    // letter-spacing: 0.5px;
-    // line-height: 32px;
-    font-family: $subtitle-font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -198,7 +178,6 @@
 }
 
 .headingText {
-    font-family: $subtitle-font-family;
     color: $font-color;
     font-style: normal;
     font-weight: 500;
@@ -209,7 +188,6 @@
 }
 
 .headingTitle {
-    font-family: $secondary-font-family;
     font-style: normal;
     font-weight: 900;
     font-size: 28px;
@@ -217,7 +195,6 @@
 }
 
 .headingSubTitle {
-    font-family: $subtitle-font-family;
     // color: $white;
     font-style: normal;
     font-weight: normal;
@@ -233,12 +210,10 @@
     line-height: 150%;
     text-align: center;
     // color: #ffffff;
-    font-family: $primary-font-family;
     text-transform: uppercase;
 }
 
 .subHeadingTitle {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: 900;
     font-size: 44px;
@@ -250,7 +225,6 @@
 }
 
 .subTitle {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: 900;
     font-size: 44px;
@@ -260,7 +234,6 @@
 }
 
 .iosHeading {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: 900;
     font-size: 48px;
@@ -271,7 +244,6 @@
 }
 
 .formDescription {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: 300;
     font-size: 11px;
@@ -281,7 +253,6 @@
 }
 
 .cardSubTitle {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 12px;
@@ -292,7 +263,6 @@
 }
 
 .cardTitle {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -302,7 +272,6 @@
 }
 
 .cardHeadingText {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
@@ -312,7 +281,6 @@
 }
 
 .cardName {
-    font-family: $primary-font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 28px;
@@ -322,7 +290,7 @@
 }
 
 .headerIntro {
-    font-family: $subtitle-font-family;
+
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -332,7 +300,6 @@
 }
 
 .headerText {
-    font-family: $subtitle-font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
