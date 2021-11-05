@@ -1,19 +1,74 @@
+version: 2.1
 jobs:
-  build_deploy:
-    machine:
-      image: ubuntu-2004:202010-01
+  dependencies:
+    docker:
+      - image: circleci/node:15.5.0
+    working_directory: ~/weshoot
     steps:
       - checkout
       - run:
-          name: Installing AWS CLI
-          command:
-            sudo apt install python3-pip
-            sudo pip3 install awsebcli
-      - run: cd ./app && pm install && pm run build
-      - run: aws s3 sync ./app/build s3://weshoot.it/
-
+          name: Install Yarn 2
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash
+            yarn set version 2.4.0
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}
+            - yarn-packages-v1
+      - run:
+          name: Install Dependencies
+          command: |
+            yarn install --immutable
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ./.yarn/cache
+      - save_cache:
+          key: v1-repo-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/weshoot
+  build:
+    docker:
+      - image: circleci/node:15.5.0
+    working_directory: ~/weshoot
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+      - run:
+          name: Build
+          command: |
+            yarn run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  deploy:
+    docker:
+      - image: circleci/node:15.5.0
+    working_directory: ~/weshoot
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Deploy
+          command: |
+            yarn run deploy
 workflows:
-  version: 2
-  execute_bulk:
+  version: 2.1
+  build_and_deploy:
     jobs:
-      - build_deploy
+      - dependencies
+      - build:
+          requires:
+            - dependencies
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
