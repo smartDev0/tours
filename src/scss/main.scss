@@ -85,3 +85,47 @@ a {
     font-size: 16px;
     margin-bottom: 30px;
 }
+
+.final-tiles-gallery {
+    position: relative;
+}
+
+.ftg-items {
+    min-height: 830px;
+}
+
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+    color: #e04f67;
+}
+
+.list_order {
+    list-style: none;
+    margin: 0 0 30px 0;
+    padding: 0;
+    line-height: 30px;
+    font-size: 14px;
+
+    li {
+        position: relative;
+        padding-left: 40px;
+        margin-bottom: 10px;
+
+        span {
+            background-color: $primary;
+            color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+}

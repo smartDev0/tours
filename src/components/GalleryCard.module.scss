@@ -1,0 +1,19 @@
+@import '../scss/bootstrap-config';
+
+.container {
+    display: block;
+    background: #000;
+    float: left;
+    overflow: hidden;
+    margin: 0;
+    opacity: 1;
+    .tile_inner {
+        .item {}
+
+        .title {}
+
+        .subtitle {}
+    }
+
+    .ftg_social {}
+}
