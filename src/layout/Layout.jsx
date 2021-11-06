@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { withPrefix } from "gatsby"
 import PropTypes from "prop-types"
-// import Footer from './Footer';
+import Footer from './Footer';
 import Header from './Header';
 
 import * as styles from './Layout.module.scss';
@@ -30,6 +30,7 @@ const Layout = ({ location, children }) => (
         <main>
             {children}
         </main>
+        <Footer />
         
     </>
 );

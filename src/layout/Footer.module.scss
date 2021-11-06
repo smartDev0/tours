@@ -1,0 +1,78 @@
+@import "../scss/bootstrap-config";
+
+.container {
+    background: #222;
+    color: #fff;
+    padding: 30px 0 10px 0;
+
+    .title {
+        font-size: 13px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0 0 10px 0;
+        list-style: none;
+
+        li {
+            margin-bottom: 10px;
+
+            a {
+                &:hover {
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .setting {
+        width: 100%;
+        overflow: hidden;
+        height: 40px;
+        background: #434343 url(./../../static/down_arrow_select.png) no-repeat right center;
+        border: none;
+        margin-bottom: 15px;
+        border-radius: 3px;
+
+        select {
+            background: 0 0;
+            width: 100%;
+            padding: 7px 5px 5px 15px;
+            border: 0;
+            border-radius: 0;
+            height: 40px;
+            margin: 0;
+            font-weight: 400;
+            cursor: pointer;
+            color: #999;
+            outline: none;
+            appearance: none;
+        }
+    }
+
+    .social_footer {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, .2);
+        padding-top: 30px;
+        margin-top: 25px;
+
+        ul {
+            margin: 0;
+            padding: 0 0 10px 0;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                margin: 0 5px 10px 5px;
+                a{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

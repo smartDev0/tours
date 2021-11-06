@@ -11,27 +11,35 @@
 @import '~bootstrap/scss/alert';
 @import '~bootstrap/scss/spinners';
 
+form{
+    padding: 10px 0;
+}
 .form-group {
-    margin-bottom: 32px;
+    margin-bottom: 12px;
 }
 
 .form-label {
-    font-size: 16px;
+    font-size: 13px;
     letter-spacing: .5px;
 }
 
 .form-control {
-    font-size: 16px;
+    font-size: 13px;
+    color: #333;
+    height: 40px;
+    border-radius: 3px;
 }
 
 .form-control::placeholder {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 200;
     letter-spacing: .5px;
 }
+
 .container-xl {
     max-width: 1200px;
 }
+
 .container-xxl {
     max-width: 1618px;
 }
@@ -40,6 +48,7 @@
 .px-1col {
     padding-left: calc(#{percentage(1 / $grid-columns)} + #{$grid-gutter-width / 2});
 }
+
 .pr-1col,
 .px-1col {
     padding-right: calc(#{percentage(1 / $grid-columns)} + #{$grid-gutter-width / 2});

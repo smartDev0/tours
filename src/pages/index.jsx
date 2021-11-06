@@ -150,7 +150,7 @@ const IndexPage = ({ path }) => {
                 <CourseCard
                   title="Premium tours"
                   tour={120}
-                  url="https://www.weshoot.it/accademia/wp-content/uploads/avatars/5/5e7f73ac2a738-bpthumb.jpg"
+                  url="https://mediaaccademia.s3.eu-west-1.amazonaws.com/accademia/wp-content/uploads/2020/06/31201048/Guida-completa-alla-Fotografia-Notturna-624x471.jpg"
                   text="Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset."
                 >
                   <Button variant={'linkOutline'}>Read more</Button>
@@ -160,7 +160,7 @@ const IndexPage = ({ path }) => {
                 <CourseCard
                   title="Premium tours"
                   tour={120}
-                  url="https://www.weshoot.it/accademia/wp-content/uploads/avatars/5/5e7f73ac2a738-bpthumb.jpg"
+                  url="https://mediaaccademia.s3.eu-west-1.amazonaws.com/accademia/wp-content/uploads/2020/06/31201048/Guida-completa-alla-Fotografia-Notturna-624x471.jpg"
                   text="Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset."
                 >
                   <Button variant={'linkOutline'}>Read more</Button>
@@ -170,7 +170,7 @@ const IndexPage = ({ path }) => {
                 <CourseCard
                   title="Premium tours"
                   tour={120}
-                  url="https://www.weshoot.it/accademia/wp-content/uploads/avatars/5/5e7f73ac2a738-bpthumb.jpg"
+                  url="https://mediaaccademia.s3.eu-west-1.amazonaws.com/accademia/wp-content/uploads/2020/06/31201048/Guida-completa-alla-Fotografia-Notturna-624x471.jpg"
                   text="Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset."
                 >
                   <Button variant={'linkOutline'}>Read more</Button>
