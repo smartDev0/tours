@@ -9,7 +9,7 @@ import TripCard from "../components/TripCard";
 // import GalleryCard from '../components/GalleryCard';
 import CourseCard from "../components/CourseCard";
 
-import backgroundVideo from './../../static/aurora-boreale-viaggio-fotografico-norvegia.mp4'
+import backgroundVideo from './../../static/media/aurora-boreale-viaggio-fotografico-norvegia.mp4'
 
 import '../scss/bootstrap.scss';
 import '../scss/main.scss';

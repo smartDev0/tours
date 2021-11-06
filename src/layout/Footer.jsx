@@ -156,7 +156,6 @@ const Footer = () => (
                     <form>
                         <div className="form-group">
                             <input name="email_newsletter" type="email" placeholder="Your mail" className="form-control"></input>
-
                         </div>
                         <Button variant={'link'} type="button">Subscribe</Button>
                     </form>
@@ -164,8 +163,8 @@ const Footer = () => (
                         SETTINGS
                     </Typography>
                     <div className={classnames([styles.setting])}>
-                        <select name="lang" id="lang">
-                            <option value="English" selected="">English</option>
+                        <select name="lang" id="lang" defaultValue={"English"}>
+                            <option value="English">English</option>
                             <option value="Italy">Italy</option>
                         </select>
                     </div>
