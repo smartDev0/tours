@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => {
                     </Col>
                     <nav className="col-9 col-sm-9 col-xs-9">
                         <a
-                            href="javascript:;"
+                            
                             className={classnames({
                                 [styles.toggle_switch]: true,
                                 [styles.active]: isActive,
@@ -62,16 +62,16 @@ const Header = ({ siteTitle }) => {
                                     <div className={styles.header_menu}>
                                         <img src={Logo} width="160" height="34" alt="City tours"></img>
                                     </div>
-                                    <a href="javascript:;" className={styles.open_close}
+                                    <a  className={styles.open_close}
                                         onClick={() => { setActive(false) }}
                                     >
-                                        <i class="icon_set_1_icon-77"></i>
+                                        <i className="icon_set_1_icon-77"></i>
                                     </a>
                                 </>
                             )}
                             <ul>
                                 <li>
-                                    <a href="javascript:;"
+                                    <a 
                                         className={styles.show_sub_menu}
                                         onClick={() => { setSubMenu(!isSubMenu) }}
                                     >
