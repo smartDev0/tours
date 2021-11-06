@@ -9,7 +9,7 @@ import * as styles from './Button.module.scss';
 const propTypes = {
     children: PropTypes.node,
     className: PropTypes.string,
-    variant: PropTypes.oneOf(['cta', 'pill', 'ctaAccent', 'pillAccent', 'link', 'linkDark', 'transparent', 'ios', 'header', 'how', 'intro', 'outline']),
+    variant: PropTypes.oneOf(['cta', 'pill', 'ctaAccent', 'pillAccent', 'link', 'linkDark', 'transparent', 'ios', 'header', 'how', 'intro', 'outline', 'linkOutline']),
     submit: PropTypes.bool,
     fullWidth: PropTypes.bool,
     rounded: PropTypes.bool,

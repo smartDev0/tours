@@ -2,7 +2,7 @@ import classnames from "classnames"
 import React from "react"
 import PropTypes from "../util/PropTypes"
 import Link from './Link'
-import * as styles from "./Category.module.scss"
+import * as styles from "./CategoryCard.module.scss"
 
 const CategoryCard = ({ children, url, link }) => (
     <Link className={classnames([styles.container])} to={link}>

@@ -1,0 +1,64 @@
+@import '../scss/bootstrap-config';
+
+.container {
+    background-color: #fff;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .1);
+    margin: 0;
+    margin-bottom: 30px;
+    border-radius: 5px;
+
+    .img_container {
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        img {
+            transform: scale(1.05);
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .card_body {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        .card_content {
+            .card_title {
+                font-weight: 700;
+                font-size: 1.35em;
+                margin-bottom: 10px;
+                line-height: 1.25;
+                color: #333;
+            }
+        }
+
+        .card_footer {
+            .card_day {
+                display: flex;
+                align-items: center;
+
+                .card_day_text {
+                    margin-left: 6px;
+                }
+            }
+
+            .card_price {
+                .card_price_value {
+                    line-height: 1;
+                    margin-left: 5px;
+                    font-size: 1.6em;
+                    font-weight: 700;
+                    color: #ff4758;
+                }
+            }
+        }
+    }
+
+}

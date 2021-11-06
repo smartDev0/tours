@@ -6,7 +6,7 @@
     transition: .2s all linear;
 
     &:hover {
-        color: $font-color;;
+        color: $primary-color;
         text-decoration: none;
     }
 
@@ -18,7 +18,7 @@
         border-bottom: 3px solid #4D4D4D30;
 
         &:hover {
-            border-bottom-color: $font-color;
+            border-bottom-color: $primary-color;
         }
     }
 
@@ -26,7 +26,7 @@
         border: 0;
 
         &:hover {
-            color: $font-color;
+            color: $primary-color;
         }
     }
 }

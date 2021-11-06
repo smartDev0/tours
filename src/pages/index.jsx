@@ -10,6 +10,7 @@ import '../scss/vender.css'
 
 import backgroundVideo from './../../static/aurora-boreale-viaggio-fotografico-norvegia.mp4'
 import CategoryCard from "../components/CategoryCard";
+import TripCard from "../components/TripCard";
 
 const IndexPage = ({ path }) => {
   return (
@@ -61,6 +62,56 @@ const IndexPage = ({ path }) => {
                   </CategoryCard>
                 </Col>
               </Row>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <div style={{ backgroundColor: 'white' }}>
+        <Container fluid="xl" className="margin_60">
+          <div className="main-title">
+            <Typography variant='heading3'>
+              Paris <span style={{ color: '#e14d67' }}>Top</span> Tours
+            </Typography>
+            <Typography>
+              Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+            </Typography>
+          </div>
+          <Row>
+            <Col lg={4} md={6} className="zoomIn">
+              <TripCard
+                link='/'
+                title='Islanda Express'
+                day='5'
+                price='749'
+                url={'https://strapi-imaginary.weroad.it/resource/small/552/islanda-a-360-gradi.jpg'}
+              >
+                <Button variant={'linkOutline'}>Vedi date</Button>
+                <Button variant={'link'} to='/'>Vedi viaggio</Button>
+              </TripCard>
+            </Col>
+            <Col lg={4} md={6} className="zoomIn">
+              <TripCard
+                link='/'
+                title='Islanda Express'
+                day='5'
+                price='749'
+                url={'https://strapi-imaginary.weroad.it/resource/small/552/islanda-a-360-gradi.jpg'}
+              >
+                <Button variant={'linkOutline'}>Vedi date</Button>
+                <Button variant={'link'} to='/'>Vedi viaggio</Button>
+              </TripCard>
+            </Col>
+            <Col lg={4} md={6} className="zoomIn">
+              <TripCard
+                link='/'
+                title='Islanda Express'
+                day='5'
+                price='749'
+                url={'https://strapi-imaginary.weroad.it/resource/small/552/islanda-a-360-gradi.jpg'}
+              >
+                <Button variant={'linkOutline'}>Vedi date</Button>
+                <Button variant={'link'} to='/'>Vedi viaggio</Button>
+              </TripCard>
             </Col>
           </Row>
         </Container>
