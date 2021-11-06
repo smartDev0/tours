@@ -37,6 +37,15 @@ const IndexPage = ({ path }) => {
       </BackgroundVideo>
       <div style={{ backgroundColor: 'white' }}>
         <Container fluid="xl" className="margin_60">
+          <div className="main-title">
+            <Typography variant='heading3'>
+            These are the best Collections
+            </Typography>
+            <Typography>
+              Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+            </Typography>
+          </div>
+          <hr></hr>
           <Row className="small-gutters">
             <Col md={6} sm={12}>
               <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_1.jpg'}>
