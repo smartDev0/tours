@@ -5,9 +5,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Link from '../components/Link';
 import useScrollPos from './../hooks/useScrollPos';
 import * as styles from './Header.module.scss'
+import Logo from '../../static/logo/WeShoot-logo-extended-black.svg'
 const Header = ({ siteTitle }) => {
     const [isScrolled, setScrolled] = React.useState(false);
-
+    const [isActive, setActive] = React.useState(false)
+    const [isSubMenu, setSubMenu] = React.useState(false)
 
     useScrollPos(offset => {
         setScrolled(offset > 100);
@@ -21,10 +23,10 @@ const Header = ({ siteTitle }) => {
             <div className={styles.top_line}>
                 <Container fluid="xl">
                     <Row className="align-items-center">
-                        <Col lg={6}>
+                        <Col lg={6} sm={6}>
                             <i className="icon-phone"></i><strong>0045 043204434</strong>
                         </Col>
-                        <Col lg={6}>
+                        <Col lg={6} sm={6}>
                             <ul className={styles.top_links}>
                                 <li><a href="/" className={styles.access_links}>Sign in</a></li>
                                 {/* <li><a href="/" className={styles.wishlist_link}>Wishlist</a></li> */}
@@ -35,19 +37,49 @@ const Header = ({ siteTitle }) => {
             </div>
             <Container fluid="xl">
                 <Row>
-                    <Col lg={3}>
+                    <Col lg={3} sm={3} xs={3}>
                         <div className={styles.logo_home}>
                             <h1><Link to='/' title="City tours travel template">City Tours travel template</Link></h1>
                         </div>
                     </Col>
-                    <nav className="col-9">
-                        <div className={styles.main_menu}>
+                    <nav className="col-9 col-sm-9 col-xs-9">
+                        <a
+                            href="javascript:;"
+                            className={classnames({
+                                [styles.toggle_switch]: true,
+                                [styles.active]: isActive,
+                            })}
+                            onClick={() => { setActive(!isActive) }}
+                        >
+                            <span>Menu mobile</span>
+                        </a>
+                        <div className={classnames({
+                            [styles.main_menu]: true,
+                            [styles.show]: isActive,
+                        })}>
+                            {isActive && (
+                                <>
+                                    <div className={styles.header_menu}>
+                                        <img src={Logo} width="160" height="34" alt="City tours"></img>
+                                    </div>
+                                    <a href="javascript:;" className={styles.open_close}
+                                        onClick={() => { setActive(false) }}
+                                    >
+                                        <i class="icon_set_1_icon-77"></i>
+                                    </a>
+                                </>
+                            )}
                             <ul>
                                 <li>
-                                    <a className={styles.show_submenu}>
+                                    <a href="javascript:;"
+                                        className={styles.show_sub_menu}
+                                        onClick={() => { setSubMenu(!isSubMenu) }}
+                                    >
                                         Photo Tour <i className="icon-down-open-mini"></i>
                                     </a>
-                                    <ul>
+                                    <ul className={classnames({
+                                        [styles.show_normal]: isSubMenu,
+                                    })}>
                                         <li>
                                             <Link to='/'>
                                                 All tours
@@ -71,17 +103,17 @@ const Header = ({ siteTitle }) => {
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.show_submenu}>
+                                    <Link to='/' className={styles.show_sub_menu}>
                                         Photo Courses
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.show_submenu}>
+                                    <Link to='/' className={styles.show_sub_menu}>
                                         Photo Academy
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.show_submenu}>
+                                    <Link to='/' className={styles.show_sub_menu}>
                                         Blog
                                     </Link>
                                 </li>
@@ -99,7 +131,6 @@ const Header = ({ siteTitle }) => {
                                 </div>
                             </li>
                         </ul>
-
                     </nav>
                 </Row>
             </Container>
