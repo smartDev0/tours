@@ -10,6 +10,7 @@ import TripCard from "../components/TripCard";
 import CourseCard from "../components/CourseCard";
 
 import backgroundVideo from './../../static/media/aurora-boreale-viaggio-fotografico-norvegia.mp4'
+import accademia from './../../static/homepage/Corso_Fotografia_online_weshoot.jpg'
 
 import '../scss/bootstrap.scss';
 import '../scss/main.scss';
@@ -140,7 +141,6 @@ const IndexPage = ({ path }) => {
               Non Aspettare
             </Typography>
           </div>
-          <hr></hr>
           <div id='gallery' className="final-tiles-gallery effect-dezoom effect-fade-out caption-top social-icons-right">
             <div className="ftg-items">
             </div>
@@ -150,7 +150,7 @@ const IndexPage = ({ path }) => {
           <Container fluid="xl" className="margin_60">
             <div className="main-title">
               <Typography variant='heading3'>
-                SOME <span style={{ color: '#e14d67' }}>GOOD</span> REASONS
+                SOME <span style={{ color: '#FC4D33' }}>GOOD</span> REASONS
               </Typography>
               <Typography>
                 Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
@@ -192,14 +192,14 @@ const IndexPage = ({ path }) => {
             <br />
             <Row>
               <Col md={6}>
-                <img src="http://www.ansonika.com/citytours/img/laptop.png" alt="laptop" className="img-fluid"></img>
+                <img src={accademia} alt="laptop" className="img-fluid"></img>
               </Col>
               <Col md={6}>
                 <Typography variant="heading4">
-                  <span>Get started</span> with CityTours
+                  Accedi all'<strong style={{ color: '#FC4D33' }}>accademia fotografica</strong>
                 </Typography>
                 <Typography variant="heading6">
-                  Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
+                  Migliora le tue foto seguendo i consigli di professionisti
                 </Typography>
                 <br />
                 <ul className="list_order">
@@ -207,7 +207,7 @@ const IndexPage = ({ path }) => {
                   <li><span>2</span>Select your preferred tours</li>
                   <li><span>3</span>Select your preferred tours</li>
                 </ul>
-                <Button variant={'link'} to='/'>Start now</Button>
+                <Button variant={'link'} to='/'>Inizia Gratis</Button>
               </Col>
             </Row>
           </Container>
