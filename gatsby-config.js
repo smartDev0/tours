@@ -51,6 +51,12 @@ module.exports = {
         ],
         display: 'swap'
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: 'weshoot.it',
+      },
+    },
   ],
 }
