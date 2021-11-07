@@ -28,8 +28,8 @@
 
 .heading1 {
     font-weight: 800;
-    font-size: 54px;
-    line-height: 60px;
+    font-size: 32px;
+    line-height: 36px;
     letter-spacing: -0.03em;
 
     @include media-breakpoint-up(md) {
@@ -44,16 +44,16 @@
 }
 
 .heading2 {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 800;
     letter-spacing: 0;
-
+    text-transform: uppercase;
     @include media-breakpoint-up(md) {
         font-size: 48px;
     }
 
     @include media-breakpoint-up(lg) {
-        font-size: 48px;
+        font-size: 28px;
     }
 }
 
@@ -73,9 +73,9 @@
     }
 
     @include media-breakpoint-up(lg) {
-        font-size: 30px;
+        font-size: 20px;
         letter-spacing: 0;
-        line-height: 48px;
+        line-height: 24px;
     }
 }
 

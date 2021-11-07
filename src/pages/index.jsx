@@ -19,17 +19,20 @@ const IndexPage = ({ path }) => {
   return (
     <>
       <SEO
-        title="Home"
+        title="WeShoot | Scatta, Viaggia e Impara"
       />
       <BackgroundVideo url={backgroundVideo} theme="dark">
         <Container fluid="xl">
           <Row className="align-items-center">
             <Col lg={12}>
               <div className="intro_title text-center">
-                <Typography className="animated fadeInDown" variant='heading1'>Impara, Viaggia e Scatta</Typography>
-                <Typography className="animated fadeInDown" variant='heading2'>Viaggi Fotografici, Corsi di Fotografia e una community di appassionati </Typography>
-                <Button variant={'intro'}>View Tours</Button>
-                <Button variant={'outline'}>View Tickets</Button>
+                <Typography className="animated fadeInDown" variant='heading1'>SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE
+                </Typography>
+                {/*<Typography className="animated fadeInDown" variant='heading2'>Condividiamo la tua stessa passione </Typography>*/}
+                <Container fluid="xl" className="margin_60">
+                  <Button variant={'outline'}>Scopri i corsi </Button>
+                <Button variant={'intro'}>Scopri i Viaggi </Button>
+                </Container>
               </div>
             </Col>
           </Row>
@@ -38,18 +41,17 @@ const IndexPage = ({ path }) => {
       <div style={{ backgroundColor: 'white' }}>
         <Container fluid="xl" className="margin_60">
           <div className="main-title">
-            <Typography variant='heading3'>
-            These are the best Collections
+            <Typography variant='heading2'>
+            Esplora le collezioni dei <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong>
             </Typography>
-            <Typography>
-              Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+            <Typography variant='heading3'>
+              Realizza i tuoi sogni di portare a casa quelle foto che hai sempre desiderato.
             </Typography>
           </div>
-          <hr></hr>
           <Row className="small-gutters">
             <Col md={6} sm={12}>
               <CategoryCard link='/' url={'https://weshootpictures.s3.eu-west-1.amazonaws.com/viaggi/Destinazioni/Lofoten.jpg'}>
-                <Typography variant='heading2'>Special Offers</Typography>
+                <Typography variant='heading2'>Aurora Boreale</Typography>
                 <Typography>1150 Locations</Typography>
               </CategoryCard>
             </Col>
@@ -57,19 +59,19 @@ const IndexPage = ({ path }) => {
               <Row className="small-gutters mt-md-0 mt-sm-2">
                 <Col sm={6}>
                   <CategoryCard link='/' url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_e2e8e30060d6858ffcd16bd74b9aec7b.jpg'}>
-                    <Typography variant='heading2'>Tours</Typography>
+                    <Typography variant='heading2'>Montagna</Typography>
                     <Typography>1150 Locations</Typography>
                   </CategoryCard>
                 </Col>
                 <Col sm={6}>
-                  <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_2.jpg'}>
-                    <Typography variant='heading2'>Hotels</Typography>
+                  <CategoryCard link='/' url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_7f636795cf13fc2c2aaade302c66a530.jpg'}>
+                    <Typography variant='heading2'>Deserti</Typography>
                     <Typography>1150 Locations</Typography>
                   </CategoryCard>
                 </Col>
                 <Col sm={12} className="mt-sm-2">
-                  <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_4.jpg'}>
-                    <Typography variant='heading2'>Hotels</Typography>
+                  <CategoryCard link='/' url={'https://weshootpictures.s3.eu-west-1.amazonaws.com/viaggi/Destinazioni/lapalma.jpg'}>
+                    <Typography variant='heading2'>Via Lattea</Typography>
                     <Typography>1150 Locations</Typography>
                   </CategoryCard>
                 </Col>
@@ -82,20 +84,20 @@ const IndexPage = ({ path }) => {
         <Container fluid="xl" className="margin_60">
           <div className="main-title">
             <Typography variant='heading3'>
-              Paris <span style={{ color: '#e14d67' }}>Top</span> Tours
+              I migliori <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong> di sempre
             </Typography>
             <Typography>
-              Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+              Scopri con noi le meraviglie intramontabili, scatta nei posti piú belli del mondo.
             </Typography>
           </div>
           <Row>
             <Col lg={4} md={6} className="zoomIn">
               <TripCard
                 link='/'
-                title='Islanda Express'
+                title='Tunisia: Esperienza unica nel deserto del Sahara'
                 day='5'
-                price={749}
-                url={'https://strapi-imaginary.weroad.it/resource/small/552/islanda-a-360-gradi.jpg'}
+                price={1699}
+                url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_01747422100f961d69dc3db870ab7c6b.jpg'}
               >
                 <Button variant={'linkOutline'}>Vedi date</Button>
                 <Button variant={'link'} to='/'>Vedi viaggio</Button>
@@ -104,10 +106,10 @@ const IndexPage = ({ path }) => {
             <Col lg={4} md={6} className="zoomIn">
               <TripCard
                 link='/'
-                title='Islanda Express'
+                title="Islanda: un itinerario esclusivo per scoprire l'isola e l'aurora boreale"
                 day='5'
                 price={749}
-                url={'https://strapi-imaginary.weroad.it/resource/small/552/islanda-a-360-gradi.jpg'}
+                url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_dfa87ee3456be3cad795922240f04549.jpg'}
               >
                 <Button variant={'linkOutline'}>Vedi date</Button>
                 <Button variant={'link'} to='/'>Vedi viaggio</Button>
@@ -116,10 +118,10 @@ const IndexPage = ({ path }) => {
             <Col lg={4} md={6} className="zoomIn">
               <TripCard
                 link='/'
-                title='Islanda Express'
+                title='Norvegia: Tra gli incredibili fiordi del Nord'
                 day='5'
                 price={749}
-                url={'https://strapi-imaginary.weroad.it/resource/small/552/islanda-a-360-gradi.jpg'}
+                url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_af3df2b421bc866ef49574603a31ea4c.jpg'}
               >
                 <Button variant={'linkOutline'}>Vedi date</Button>
                 <Button variant={'link'} to='/'>Vedi viaggio</Button>
@@ -132,10 +134,10 @@ const IndexPage = ({ path }) => {
         <Container fluid="xl" className="margin_60">
           <div className="main-title">
             <Typography variant='heading3'>
-              SOME <span style={{ color: '#e14d67' }}>IMAGES</span> FROM TRAVELLERS
+              Il momento giusto é adesso.
             </Typography>
             <Typography>
-              Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+              Non Aspettare
             </Typography>
           </div>
           <hr></hr>

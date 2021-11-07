@@ -1,11 +1,12 @@
 import * as React from "react"
 import classnames from "classnames"
 import PropTypes from "prop-types"
-import { Container, Row, Col } from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import Link from '../components/Link';
 import useScrollPos from './../hooks/useScrollPos';
 import * as styles from './Header.module.scss'
 import Logo from '../../static/logo/WeShoot-logo-extended-black.svg'
+
 const Header = ({ siteTitle }) => {
     const [isScrolled, setScrolled] = React.useState(false);
     const [isActive, setActive] = React.useState(false)
@@ -20,21 +21,6 @@ const Header = ({ siteTitle }) => {
             [styles.header]: true,
             [styles.headerScrolled]: isScrolled,
         })}>
-            <div className={styles.top_line}>
-                <Container fluid="xl">
-                    <Row className="align-items-center">
-                        <Col lg={6} sm={6}>
-                            <i className="icon-phone"></i><strong>0045 043204434</strong>
-                        </Col>
-                        <Col lg={6} sm={6}>
-                            <ul className={styles.top_links}>
-                                <li><a href="/" className={styles.access_links}>Sign in</a></li>
-                                {/* <li><a href="/" className={styles.wishlist_link}>Wishlist</a></li> */}
-                            </ul>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
             <Container fluid="xl">
                 <Row>
                     <Col lg={3} sm={3} xs={3}>
