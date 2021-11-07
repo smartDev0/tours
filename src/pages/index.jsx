@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Container, Row, Col } from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -26,8 +26,8 @@ const IndexPage = ({ path }) => {
           <Row className="align-items-center">
             <Col lg={12}>
               <div className="intro_title text-center">
-                <Typography className="animated fadeInDown" variant='heading3'>Affordable Paris tours</Typography>
-                <Typography className="animated fadeInDown" variant='intro'>City Tours / Tour Tickets / Tour Guides</Typography>
+                <Typography className="animated fadeInDown" variant='heading1'>Impara, Viaggia e Scatta</Typography>
+                <Typography className="animated fadeInDown" variant='heading2'>Viaggi Fotografici, Corsi di Fotografia e una community di appassionati </Typography>
                 <Button variant={'intro'}>View Tours</Button>
                 <Button variant={'outline'}>View Tickets</Button>
               </div>
@@ -48,7 +48,7 @@ const IndexPage = ({ path }) => {
           <hr></hr>
           <Row className="small-gutters">
             <Col md={6} sm={12}>
-              <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_1.jpg'}>
+              <CategoryCard link='/' url={'https://weshootpictures.s3.eu-west-1.amazonaws.com/viaggi/Destinazioni/Lofoten.jpg'}>
                 <Typography variant='heading2'>Special Offers</Typography>
                 <Typography>1150 Locations</Typography>
               </CategoryCard>
@@ -56,7 +56,7 @@ const IndexPage = ({ path }) => {
             <Col md={6} sm={12}>
               <Row className="small-gutters mt-md-0 mt-sm-2">
                 <Col sm={6}>
-                  <CategoryCard link='/' url={'http://www.ansonika.com/citytours/img/img_cat_home_2.jpg'}>
+                  <CategoryCard link='/' url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_e2e8e30060d6858ffcd16bd74b9aec7b.jpg'}>
                     <Typography variant='heading2'>Tours</Typography>
                     <Typography>1150 Locations</Typography>
                   </CategoryCard>
