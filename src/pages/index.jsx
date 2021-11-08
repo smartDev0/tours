@@ -113,8 +113,8 @@ const IndexPage = ({ path }) => {
                 <Typography className="animated fadeInDown" variant='heading1'>SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE
                 </Typography>
                 <Container fluid="xl" className="pt-8 pb-8">
-                  <Button variant={'outline'}>Scopri i corsi </Button>
-                  <Button variant={'intro'}>Scopri i Viaggi </Button>
+                  <Button variant={'outline'} className={'mb-1'}>Scopri i corsi </Button>
+                  <Button variant={'intro'} className={'mb-1'}>Scopri i Viaggi </Button>
                 </Container>
               </div>
             </Col>
