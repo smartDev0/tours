@@ -1,5 +1,7 @@
 import * as React from "react"
-import {Col, Container, Row} from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { graphql } from 'gatsby';
+import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -16,66 +18,15 @@ import '../scss/bootstrap.scss';
 import '../scss/main.scss';
 import '../scss/vender.css'
 
-const photos = [
-  {
-    src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
-    width: 1,
-    height: 1
-  },
-  {
-    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
-    width: 3,
-    height: 4
-  },
-  {
-    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
-    width: 4,
-    height: 3
-  },
-  {
-    src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
-    width: 4,
-    height: 3
-  }
-];
-const IndexPage = ({ path }) => {
+
+const IndexPage = () => {
   const [categories, setCategories] = React.useState(null)
   const [courses, setCourses] = React.useState(null)
   const [workshop, setWorkshop] = React.useState(null)
   const [workshopImages, setWorkshopImages] = React.useState(null)
 
-  const getMeta = (url) => {
-    var img = new Image();
-    img.src = url;
-    img.onload = function () {
-      console.log(this.width)
-    }
-  }
+  const { t } = useTranslation();
+
   React.useEffect(async () => {
     const result = await fetch(
       `${process.env.GATSBY_API_URL}/category`
@@ -87,16 +38,16 @@ const IndexPage = ({ path }) => {
     ).then(res => res.json())
     setCourses(courseResult)
 
-    const workshopResult = await fetch(
-      `${process.env.GATSBY_API_URL}/workshop`
-    ).then(res => res.json())
-    const filterWorkshop = workshopResult.filter(item => {
-      if(item.public == 1) {
-        return item
-      }
-    })
-    console.log(filterWorkshop)
-    setWorkshop(filterWorkshop)
+    // const workshopResult = await fetch(
+    //   `${process.env.GATSBY_API_URL}/workshop`
+    // ).then(res => res.json())
+    // const filterWorkshop = workshopResult.filter(item => {
+    //   if(item.public === 1) {
+    //     return item
+    //   }
+    // })
+    // console.log(filterWorkshop)
+    // setWorkshop(filterWorkshop)
 
     const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
       method: 'post',
@@ -121,7 +72,8 @@ const IndexPage = ({ path }) => {
           <Row className="align-items-center">
             <Col lg={12}>
               <div className="intro_title text-center">
-                <Typography className="animated fadeInDown" variant='heading1'>SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE
+                <Typography className="animated fadeInDown" variant='heading1'>
+                  {t('SHOOT WITH THOSE WHO SHARE YOUR SAME PASSION')}
                 </Typography>
                 <Container fluid="xl" className="pt-8 pb-8">
                   <Button variant={'outline'} className={'mb-1'}>Scopri i corsi </Button>
@@ -135,6 +87,9 @@ const IndexPage = ({ path }) => {
       <div style={{ backgroundColor: 'white' }}>
         <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
+            <h1>
+              <Trans>catgory_title</Trans>
+            </h1>
             <Typography variant='heading2'>
               Esplora le collezioni dei <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong>
             </Typography>
@@ -157,34 +112,6 @@ const IndexPage = ({ path }) => {
                     )
                   }
                 })}
-                {/* <Col md={6} sm={12}>
-                  <CategoryCard link='/' url={categories[0].img}>
-                    <Typography variant='heading2'>{categories[0]?.name}</Typography>
-                    <Typography>{categories[0]?.description}</Typography>
-                  </CategoryCard>
-                </Col>
-                <Col md={6} sm={12}>
-                  <Row className="small-gutters mt-md-0 mt-sm-2">
-                    <Col sm={6}>
-                      <CategoryCard link='/' url={categories[1].img}>
-                        <Typography variant='heading2'>{categories[1].name}</Typography>
-                        <Typography>{categories[1].description}</Typography>
-                      </CategoryCard>
-                    </Col>
-                    <Col sm={6}>
-                      <CategoryCard link='/' url={categories[2].img}>
-                        <Typography variant='heading2'>{categories[2].name}</Typography>
-                        <Typography>{categories[2].description}</Typography>
-                      </CategoryCard>
-                    </Col>
-                    <Col sm={12} className="mt-sm-2">
-                      <CategoryCard link='/' url={categories[3].img}>
-                        <Typography variant='heading2'>{categories[3].name}</Typography>
-                        <Typography>{categories[3].description}</Typography>
-                      </CategoryCard>
-                    </Col>
-                  </Row>
-                </Col> */}
               </Row>
             )
           }
@@ -240,7 +167,7 @@ const IndexPage = ({ path }) => {
           </Row>
         </Container>
       </div>
-      <div style={{backgroundColor: "rgb(34, 34, 34)"}}>
+      <div style={{ backgroundColor: "rgb(34, 34, 34)" }}>
         <Container fluid="xl" className="pt-8 pb-8" >
           <div className="main-title">
             <Typography variant='heading2'>
@@ -310,4 +237,19 @@ const IndexPage = ({ path }) => {
     </>
   )
 }
+
 export default IndexPage
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
