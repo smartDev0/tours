@@ -80,6 +80,7 @@ const IndexPage = ({ path }) => {
       `${process.env.GATSBY_API_URL}/category`
     ).then(res => res.json())
     setCategories(result)
+    console.log(result)
 
     const courseResult = await fetch(
       `${process.env.GATSBY_API_URL}/course`
@@ -92,8 +93,7 @@ const IndexPage = ({ path }) => {
       body: JSON.stringify({ "type": "group" })
     }).then(res => res.json());
     const data = workshopImageResult.map((item) => {
-      item.src = item.thumbnail_id;
-      console.log(item.thumbnail_id)
+      item.src = process.env.GATSBY_WESHOOT_AWS_URL + item.thumbnail_id;
       item.width = 4;
       item.height = 3;
       return item
