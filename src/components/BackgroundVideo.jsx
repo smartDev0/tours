@@ -13,8 +13,9 @@ const BackgroundVideo = ({ children, theme, url }) => (
                 loop
                 muted
                 autoPlay
+                playsinline
             >
-                <source src={url} type="video/mp4" />
+                <source src={url} type="video/mp4"/>
             </video>
         </div>
         <div className={classnames([styles.gradient, styles.overlay])}></div>
