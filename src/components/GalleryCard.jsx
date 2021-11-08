@@ -42,26 +42,11 @@ const GalleryCard = ({ children, photos, }) => {
 }
 
 GalleryCard.propTypes = {
-    children: PropTypes.node,
-    images: PropTypes.arrayOf(
-        PropTypes.shape({
-            src: PropTypes.string.isRequired,
-            thumbnail: PropTypes.string.isRequired,
-            srcset: PropTypes.array,
-            caption: PropTypes.oneOfType([
-                PropTypes.string,
-                PropTypes.element
-            ]),
-            thumbnailWidth: PropTypes.number.isRequired,
-            thumbnailHeight: PropTypes.number.isRequired
-        })
-    ).isRequired,
-    enableImageSelection: PropTypes.bool
+    children: PropTypes.node
 }
 
 GalleryCard.defaultProps = {
-    children: null,
-    enableImageSelection: false
+    children: null
 }
 
 export default GalleryCard

@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { withPrefix } from "gatsby"
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 import Footer from './Footer';
 import Header from './Header';
 

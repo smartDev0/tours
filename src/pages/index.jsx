@@ -64,6 +64,21 @@ const photos = [
   }
 ];
 const IndexPage = ({ path }) => {
+  const [categories, setCategories] = React.useState(null)
+  const [courses, setCourses] = React.useState(null)
+
+  React.useEffect(async () => {
+    const result = await fetch(
+      `${process.env.GATSBY_API_URL}/category`
+    ).then(res => res.json())
+    setCategories(result)
+
+    const courseResult = await fetch(
+      `${process.env.GATSBY_API_URL}/course`
+    ).then(res => res.json())
+    setCourses(courseResult)
+
+  }, [])
   return (
     <>
       <SEO
@@ -95,36 +110,40 @@ const IndexPage = ({ path }) => {
               Realizza i tuoi sogni di portare a casa quelle foto che hai sempre desiderato.
             </Typography>
           </div>
-          <Row className="small-gutters">
-            <Col md={6} sm={12}>
-              <CategoryCard link='/' url={'https://weshootpictures.s3.eu-west-1.amazonaws.com/viaggi/Destinazioni/Lofoten.jpg'}>
-                <Typography variant='heading2'>Aurora Boreale</Typography>
-                <Typography>1150 Locations</Typography>
-              </CategoryCard>
-            </Col>
-            <Col md={6} sm={12}>
-              <Row className="small-gutters mt-md-0 mt-sm-2">
-                <Col sm={6}>
-                  <CategoryCard link='/' url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_e2e8e30060d6858ffcd16bd74b9aec7b.jpg'}>
-                    <Typography variant='heading2'>Montagna</Typography>
-                    <Typography>1150 Locations</Typography>
+          {categories && categories.length > 0 &&
+            (
+              <Row className="small-gutters">
+                <Col md={6} sm={12}>
+                  <CategoryCard link='/' url={categories[0].img}>
+                    <Typography variant='heading2'>{categories[0]?.name}</Typography>
+                    <Typography>{categories[0]?.description}</Typography>
                   </CategoryCard>
                 </Col>
-                <Col sm={6}>
-                  <CategoryCard link='/' url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_7f636795cf13fc2c2aaade302c66a530.jpg'}>
-                    <Typography variant='heading2'>Deserti</Typography>
-                    <Typography>1150 Locations</Typography>
-                  </CategoryCard>
-                </Col>
-                <Col sm={12} className="mt-sm-2">
-                  <CategoryCard link='/' url={'https://weshootpictures.s3.eu-west-1.amazonaws.com/viaggi/Destinazioni/lapalma.jpg'}>
-                    <Typography variant='heading2'>Via Lattea</Typography>
-                    <Typography>1150 Locations</Typography>
-                  </CategoryCard>
+                <Col md={6} sm={12}>
+                  <Row className="small-gutters mt-md-0 mt-sm-2">
+                    <Col sm={6}>
+                      <CategoryCard link='/' url={categories[1].img}>
+                        <Typography variant='heading2'>{categories[1].name}</Typography>
+                        <Typography>{categories[1].description}</Typography>
+                      </CategoryCard>
+                    </Col>
+                    <Col sm={6}>
+                      <CategoryCard link='/' url={categories[2].img}>
+                        <Typography variant='heading2'>{categories[2].name}</Typography>
+                        <Typography>{categories[2].description}</Typography>
+                      </CategoryCard>
+                    </Col>
+                    <Col sm={12} className="mt-sm-2">
+                      <CategoryCard link='/' url={categories[3].img}>
+                        <Typography variant='heading2'>{categories[3].name}</Typography>
+                        <Typography>{categories[3].description}</Typography>
+                      </CategoryCard>
+                    </Col>
+                  </Row>
                 </Col>
               </Row>
-            </Col>
-          </Row>
+            )
+          }
         </Container>
       </div>
       <div style={{ backgroundColor: 'white' }}>
@@ -201,38 +220,23 @@ const IndexPage = ({ path }) => {
                 Impara da vincitori di contest internazionali, sviluppa il tuo stile fotografico.
               </Typography>
             </div>
-            <Row>
-              <Col lg={4}>
-                <CourseCard
-                  title="Premium tours"
-                  tour={120}
-                  url="https://mediaaccademia.s3.eu-west-1.amazonaws.com/accademia/wp-content/uploads/2020/06/31201048/Guida-completa-alla-Fotografia-Notturna-624x471.jpg"
-                  text="Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset."
-                >
-                  <Button variant={'linkOutline'}>Read more</Button>
-                </CourseCard>
-              </Col>
-              <Col lg={4}>
-                <CourseCard
-                  title="Premium tours"
-                  tour={120}
-                  url="https://mediaaccademia.s3.eu-west-1.amazonaws.com/accademia/wp-content/uploads/2020/06/31201048/Guida-completa-alla-Fotografia-Notturna-624x471.jpg"
-                  text="Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset."
-                >
-                  <Button variant={'linkOutline'}>Read more</Button>
-                </CourseCard>
-              </Col>
-              <Col lg={4}>
-                <CourseCard
-                  title="Premium tours"
-                  tour={120}
-                  url="https://mediaaccademia.s3.eu-west-1.amazonaws.com/accademia/wp-content/uploads/2020/06/31201048/Guida-completa-alla-Fotografia-Notturna-624x471.jpg"
-                  text="Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset."
-                >
-                  <Button variant={'linkOutline'}>Read more</Button>
-                </CourseCard>
-              </Col>
-            </Row>
+            {courses && courses.length > 0 && (
+              <Row>
+                {courses.map((course, i) => (
+                  <Col lg={4} key={i} className="mb-1">
+                    <CourseCard
+                      title={course.title}
+                      tour={120}
+                      url={course.img}
+                      text={course.excerpt}
+                    >
+                      <Button variant={'linkOutline'} to={course.url}>Read more</Button>
+                    </CourseCard>
+                  </Col>
+                ))}
+              </Row>
+            )}
+
             <Row className="pt-8 pb-8">
               <Col md={6}>
                 <img src={accademia} alt="laptop" className="img-fluid"></img>
@@ -259,15 +263,4 @@ const IndexPage = ({ path }) => {
     </>
   )
 }
-const captionStyle = {
-  backgroundColor: "rgba(0, 0, 0, 0.8)",
-  maxHeight: "240px",
-  overflow: "hidden",
-  position: "absolute",
-  bottom: "0",
-  width: "100%",
-  color: "white",
-  padding: "2px",
-  fontSize: "90%"
-};
 export default IndexPage
