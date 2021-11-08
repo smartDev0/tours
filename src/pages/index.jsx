@@ -1,7 +1,6 @@
 import * as React from "react"
 import {Col, Container, Row} from 'react-bootstrap';
-import {graphql} from 'gatsby';
-import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
+import {useTranslation} from 'gatsby-plugin-react-i18next';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -87,9 +86,6 @@ const IndexPage = () => {
       <div style={{ backgroundColor: 'white' }}>
         <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
-            <h1>
-              <Trans>catgory_title</Trans>
-            </h1>
             <Typography variant='heading2'>
               Esplora le collezioni dei <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong>
             </Typography>
@@ -229,17 +225,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;

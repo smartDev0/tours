@@ -1,6 +1,9 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const url = process.env.GATSBY_SITE_URL || "https://www.weshoot.it";
+const supportedLanguages = ["en", "it"];
+const defaultLanguage = "it";
 
 module.exports = {
   siteMetadata: {
@@ -57,39 +60,91 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-s3`,
+      resolve: `gatsby-theme-i18n`,
       options: {
-        bucketName: 'weshoot.it',
+        defaultLang: defaultLanguage,
+        configPath: require.resolve(`./i18n/config.json`),
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-theme-i18n-react-i18next`,
       options: {
-        path: `${__dirname}/locales`,
-        name: `locale`
-      }
+        locales: `./i18n/locales`,
+        i18nextOptions: {
+          ns: ["translation"],
+          fallbackLng: defaultLanguage,
+          supportedLngs: supportedLanguages,
+        },
+      },
     },
     {
-      resolve: `gatsby-plugin-react-i18next`,
+      resolve: `gatsby-plugin-s3`,
       options: {
-        localeJsonSourceName: `locale`,
-        languages: [`en`, `it`],
-        defaultLanguage: `it`,
-        siteUrl: `http://localhost:8000/`,
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false 
+        bucketName: process.env.AWS_S3_BUCKET || "weshoot.it",
+        protocol: "https",
+        hostname: process.env.AWS_S3_BUCKET ||  "weshoot.it",
+        generateMatchPathRewrites: false,
+        generateRoutingRules: true,
+        generateRedirectObjectsForPermanentRedirects: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-MRH76BZ",
+        includeInDevelopment: false,
+        routeChangeEventName: "page_view",
+      },
+    },
+    // {
+    //   resolve: "gatsby-plugin-iubenda-cookie-footer",
+    //   options: {
+    //     googleTagManagerOptions: true,
+    //     iubendaOptions: {
+    //       consentOnContinuedBrowsing: false,
+    //       lang: "en",
+    //       siteId: 43774671,
+    //       floatingPreferencesButtonDisplay: false,
+    //       enableCMP: true,
+    //       googleAdditionalConsentMode: true,
+    //       isTCFConsentGlobal: false,
+    //       cookiePolicyId: 45634728,
+    //       banner: {
+    //         acceptButtonDisplay: true,
+    //         customizeButtonDisplay: true,
+    //         position: "float-center",
+    //         backgroundOverlay: true,
+    //         rejectButtonDisplay: true,
+    //       },
+    //     },
+    //   },
+    // },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        sitemap: url + "/sitemap.xml",
+        env: {
+          development: {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
           },
-          keySeparator: false,
-          nsSeparator: false
+          staging: {
+            policy: [
+              { userAgent: "AhrefsSiteAudit", allow: ["/"] },
+              { userAgent: "Screaming Frog SEO Spider", allow: ["/"] },
+              { userAgent: "*", disallow: ["/"] },
+            ],
+          },
+          production: {
+            policy: [
+              {
+                userAgent: "*",
+                allow: "/",
+              },
+              { userAgent: "*", allow: "/" },
+            ],
+          },
         },
-        pages: [
-          {
-            matchPath: '/',
-            languages: ['it']
-          }
-        ]
-      }
-    }
+      },
+    },
   ],
 }
