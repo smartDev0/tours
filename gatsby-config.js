@@ -8,9 +8,9 @@ const defaultLanguage = "it";
 module.exports = {
   siteMetadata: {
     title: ``,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `La piú grande community Italiana di fotografia paesaggistica. Scopri i nostri Viaggi Fotografici economici, Corsi online di fotografia e notizie.`,
+    author: `@weshoot`,
+    siteUrl: `https://www.weshoot.it`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
