@@ -228,8 +228,8 @@ const IndexPage = ({ path }) => {
           </Row>
         </Container>
       </div>
-      <div>
-        <Container fluid="xl" className="pt-8 pb-8">
+      <div style={{backgroundColor: "rgb(34, 34, 34)"}}>
+        <Container fluid="xl" className="pt-8 pb-8" >
           <div className="main-title">
             <Typography variant='heading2'>
               Il momento giusto é adesso.
