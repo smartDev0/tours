@@ -10,7 +10,7 @@ module.exports = {
     title: ``,
     description: `La piú grande community Italiana di fotografia paesaggistica. Scopri i nostri Viaggi Fotografici economici, Corsi online di fotografia e notizie.`,
     author: `@weshoot`,
-    siteUrl: `https://www.weshoot.it`,
+    siteUrl: `https://staging.weshoot.it`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
