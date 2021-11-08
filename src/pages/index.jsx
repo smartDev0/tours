@@ -66,6 +66,7 @@ const photos = [
 const IndexPage = ({ path }) => {
   const [categories, setCategories] = React.useState(null)
   const [courses, setCourses] = React.useState(null)
+  const [workshop, setWorkshop] = React.useState(null)
   const [workshopImages, setWorkshopImages] = React.useState(null)
 
   const getMeta = (url) => {
@@ -85,6 +86,17 @@ const IndexPage = ({ path }) => {
       `${process.env.GATSBY_API_URL}/course`
     ).then(res => res.json())
     setCourses(courseResult)
+
+    const workshopResult = await fetch(
+      `${process.env.GATSBY_API_URL}/workshop`
+    ).then(res => res.json())
+    const filterWorkshop = workshopResult.filter(item => {
+      if(item.public == 1) {
+        return item
+      }
+    })
+    console.log(filterWorkshop)
+    setWorkshop(filterWorkshop)
 
     const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
       method: 'post',
