@@ -1,7 +1,7 @@
 import * as React from "react"
-import { Col, Container, Row } from 'react-bootstrap';
-import { graphql } from 'gatsby';
-import { Trans, useTranslation } from 'gatsby-plugin-react-i18next';
+import {Col, Container, Row} from 'react-bootstrap';
+import {graphql} from 'gatsby';
+import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -73,7 +73,7 @@ const IndexPage = () => {
             <Col lg={12}>
               <div className="intro_title text-center">
                 <Typography className="animated fadeInDown" variant='heading1'>
-                  {t('SHOOT WITH THOSE WHO SHARE YOUR SAME PASSION')}
+                  {t('ui.pages.home.title')}
                 </Typography>
                 <Container fluid="xl" className="pt-8 pb-8">
                   <Button variant={'outline'} className={'mb-1'}>Scopri i corsi </Button>

@@ -1,3 +1,9 @@
 {
-    "SHOOT WITH THOSE WHO SHARE YOUR SAME PASSION": "SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE"
+	"ui": {
+		"pages": {
+			"home": {
+				"title": "SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE"
+			}
+		}
+	}
 }
