@@ -94,7 +94,7 @@ const IndexPage = ({ path }) => {
     const data = workshopImageResult.map((item) => {
       item.src = process.env.GATSBY_WESHOOT_AWS_URL + item.thumbnail_id;
       item.width = 4;
-      item.height = 3;
+      item.height = 4;
       return item
     })
     setWorkshopImages(data)
