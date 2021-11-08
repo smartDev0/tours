@@ -1,59 +1,67 @@
 import classnames from "classnames"
-import React from "react"
+import React, { useState, useCallback } from "react";
 import PropTypes from "../util/PropTypes"
-import Link from './Link'
 import * as styles from "./GalleryCard.module.scss"
-const GalleryCard = ({ children, url, link, title, subtitle, twitter, facebook, google, pinterest }) => (
-    <div className={classnames([styles.container])}>
-        <Link to={link} className={classnames([styles.tile_inner])}>
-            <img src={url} alt='' className={classnames([styles.item])} />
-            {/* <span className={classnames([styles.title])}>
-                {title}
-            </span>
-            <span className={classnames([styles.subtitle])}>
-                {subtitle}
-            </span> */}
-        </Link>
-        <div className={classnames([styles.ftg_social])}>
-            <Link to={twitter}>
-                <i className="fa fa-twitter"></i>
-            </Link>
-            <Link to={facebook}>
-                <i className="fa fa-facebook"></i>
-            </Link>
-            <Link to={google}>
-                <i className="fa fa-google"></i>
-            </Link>
-            <Link to={pinterest}>
-                <i className="fa fa-pinterest"></i>
-            </Link>
-        </div>
-    </div>
+import Gallery from "react-photo-gallery";
+import Carousel, { Modal, ModalGateway } from "react-images";
 
-)
+const GalleryCard = ({ children, photos, }) => {
+    const [currentImage, setCurrentImage] = useState(0);
+    const [viewerIsOpen, setViewerIsOpen] = useState(false);
+
+    const openLightbox = useCallback((event, { photo, index }) => {
+        setCurrentImage(index);
+        setViewerIsOpen(true);
+    }, []);
+
+    const closeLightbox = () => {
+        setCurrentImage(0);
+        setViewerIsOpen(false);
+    };
+    return (
+        <div className={classnames([styles.container])}>
+            <Gallery photos={photos} onClick={openLightbox} />
+            <ModalGateway>
+                {viewerIsOpen ? (
+                    <Modal onClose={closeLightbox}>
+                        <Carousel
+                            currentIndex={currentImage}
+                            views={photos.map(x => ({
+                                ...x,
+                                srcset: x.srcSet,
+                                caption: x.title
+                            }))}
+                        />
+                    </Modal>
+                ) : null}
+            </ModalGateway>
+            {children}
+        </div>
+
+    )
+}
 
 GalleryCard.propTypes = {
     children: PropTypes.node,
-    url: PropTypes.string,
-    link: PropTypes.string,
-    title: PropTypes.string,
-    subtitle: PropTypes.string,
-    twitter: PropTypes.string,
-    facebook: PropTypes.string,
-    google: PropTypes.string,
-    pinterest: PropTypes.string,
+    images: PropTypes.arrayOf(
+        PropTypes.shape({
+            src: PropTypes.string.isRequired,
+            thumbnail: PropTypes.string.isRequired,
+            srcset: PropTypes.array,
+            caption: PropTypes.oneOfType([
+                PropTypes.string,
+                PropTypes.element
+            ]),
+            thumbnailWidth: PropTypes.number.isRequired,
+            thumbnailHeight: PropTypes.number.isRequired
+        })
+    ).isRequired,
+    enableImageSelection: PropTypes.bool
 }
 
 GalleryCard.defaultProps = {
     children: null,
-    url: null,
-    link: null,
-    title: '',
-    subtitle: '',
-    twitter: null,
-    facebook: null,
-    google: null,
-    pinterest: null
+    enableImageSelection: false
 }
 
 export default GalleryCard

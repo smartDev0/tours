@@ -1,12 +1,12 @@
 import * as React from "react"
-import {Col, Container, Row} from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
 import Button from '../components/Button'
 import CategoryCard from "../components/CategoryCard";
 import TripCard from "../components/TripCard";
-// import GalleryCard from '../components/GalleryCard';
+import GalleryCard from '../components/GalleryCard';
 import CourseCard from "../components/CourseCard";
 
 import backgroundVideo from './../../static/media/aurora-boreale-viaggio-fotografico-norvegia.mp4'
@@ -16,6 +16,53 @@ import '../scss/bootstrap.scss';
 import '../scss/main.scss';
 import '../scss/vender.css'
 
+const photos = [
+  {
+    src: "https://source.unsplash.com/2ShvY8Lf6l0/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/Dm-qxdynoEc/800x799",
+    width: 1,
+    height: 1
+  },
+  {
+    src: "https://source.unsplash.com/qDkso9nvCg0/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/iecJiKe_RNg/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/epcsn8Ed8kY/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/NQSWvyVRIJk/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/zh7GEuORbUw/600x799",
+    width: 3,
+    height: 4
+  },
+  {
+    src: "https://source.unsplash.com/PpOHJezOalU/800x599",
+    width: 4,
+    height: 3
+  },
+  {
+    src: "https://source.unsplash.com/I1ASdgphUH4/800x599",
+    width: 4,
+    height: 3
+  }
+];
 const IndexPage = ({ path }) => {
   return (
     <>
@@ -29,9 +76,9 @@ const IndexPage = ({ path }) => {
               <div className="intro_title text-center">
                 <Typography className="animated fadeInDown" variant='heading1'>SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE
                 </Typography>
-                <Container fluid="xl" className="pt-6 pb-6">
+                <Container fluid="xl" className="pt-8 pb-8">
                   <Button variant={'outline'}>Scopri i corsi </Button>
-                <Button variant={'intro'}>Scopri i Viaggi </Button>
+                  <Button variant={'intro'}>Scopri i Viaggi </Button>
                 </Container>
               </div>
             </Col>
@@ -39,10 +86,10 @@ const IndexPage = ({ path }) => {
         </Container>
       </BackgroundVideo>
       <div style={{ backgroundColor: 'white' }}>
-        <Container fluid="xl" className="pt-6 pb-6">
+        <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
             <Typography variant='heading2'>
-            Esplora le collezioni dei <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong>
+              Esplora le collezioni dei <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong>
             </Typography>
             <Typography variant='heading3'>
               Realizza i tuoi sogni di portare a casa quelle foto che hai sempre desiderato.
@@ -81,7 +128,7 @@ const IndexPage = ({ path }) => {
         </Container>
       </div>
       <div style={{ backgroundColor: 'white' }}>
-        <Container fluid="xl" className="pt-6 pb-6">
+        <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
             <Typography variant='heading2'>
               I migliori <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong> di sempre
@@ -130,8 +177,8 @@ const IndexPage = ({ path }) => {
           </Row>
         </Container>
       </div>
-      <div style={{ backgroundColor: 'rgb(34, 34, 34)' }}>
-        <Container fluid="xl" className="pt-6 pb-6">
+      <div>
+        <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
             <Typography variant='heading2'>
               Il momento giusto é adesso.
@@ -140,13 +187,12 @@ const IndexPage = ({ path }) => {
               Non Aspettare
             </Typography>
           </div>
-          <div id='gallery' className="final-tiles-gallery effect-dezoom effect-fade-out caption-top social-icons-right">
-            <div className="ftg-items">
-            </div>
-          </div>
+          <GalleryCard
+            photos={photos}
+          />
         </Container>
         <div style={{ backgroundColor: 'white' }}>
-          <Container fluid="xl" className="pt-6 pb-6">
+          <Container fluid="xl" className="pt-8 pb-8">
             <div className="main-title">
               <Typography variant='heading2'>
                 Ecco i <strong style={{ color: '#FC4D33' }}>Corsi di Fotografia</strong> WeShoot
@@ -213,5 +259,15 @@ const IndexPage = ({ path }) => {
     </>
   )
 }
-
+const captionStyle = {
+  backgroundColor: "rgba(0, 0, 0, 0.8)",
+  maxHeight: "240px",
+  overflow: "hidden",
+  position: "absolute",
+  bottom: "0",
+  width: "100%",
+  color: "white",
+  padding: "2px",
+  fontSize: "90%"
+};
 export default IndexPage
