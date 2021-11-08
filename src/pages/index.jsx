@@ -29,7 +29,6 @@ const IndexPage = ({ path }) => {
               <div className="intro_title text-center">
                 <Typography className="animated fadeInDown" variant='heading1'>SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE
                 </Typography>
-                {/*<Typography className="animated fadeInDown" variant='heading2'>Condividiamo la tua stessa passione </Typography>*/}
                 <Container fluid="xl" className="margin_60">
                   <Button variant={'outline'}>Scopri i corsi </Button>
                 <Button variant={'intro'}>Scopri i Viaggi </Button>
@@ -84,10 +83,10 @@ const IndexPage = ({ path }) => {
       <div style={{ backgroundColor: 'white' }}>
         <Container fluid="xl" className="margin_60">
           <div className="main-title">
-            <Typography variant='heading3'>
+            <Typography variant='heading2'>
               I migliori <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong> di sempre
             </Typography>
-            <Typography>
+            <Typography variant='heading3'>
               Scopri con noi le meraviglie intramontabili, scatta nei posti piú belli del mondo.
             </Typography>
           </div>
@@ -131,13 +130,13 @@ const IndexPage = ({ path }) => {
           </Row>
         </Container>
       </div>
-      <div style={{ backgroundColor: 'white' }}>
+      <div style={{ backgroundColor: 'rgb(34, 34, 34)' }}>
         <Container fluid="xl" className="margin_60">
           <div className="main-title">
-            <Typography variant='heading3'>
+            <Typography variant='heading2'>
               Il momento giusto é adesso.
             </Typography>
-            <Typography>
+            <Typography variant='heading3'>
               Non Aspettare
             </Typography>
           </div>
@@ -149,11 +148,11 @@ const IndexPage = ({ path }) => {
         <div style={{ backgroundColor: 'white' }}>
           <Container fluid="xl" className="margin_60">
             <div className="main-title">
-              <Typography variant='heading3'>
-                SOME <span style={{ color: '#FC4D33' }}>GOOD</span> REASONS
+              <Typography variant='heading2'>
+                Ecco i <strong style={{ color: '#FC4D33' }}>Corsi di Fotografia</strong> WeShoot
               </Typography>
-              <Typography>
-                Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
+              <Typography variant='heading3'>
+                Impara da vincitori di contest internazionali, sviluppa il tuo stile fotografico.
               </Typography>
             </div>
             <Row>
@@ -195,17 +194,17 @@ const IndexPage = ({ path }) => {
                 <img src={accademia} alt="laptop" className="img-fluid"></img>
               </Col>
               <Col md={6}>
-                <Typography variant="heading4">
+                <Typography variant="heading3">
                   Accedi all'<strong style={{ color: '#FC4D33' }}>accademia fotografica</strong>
                 </Typography>
-                <Typography variant="heading6">
+                <Typography variant="heading4">
                   Migliora le tue foto seguendo i consigli di professionisti
                 </Typography>
                 <br />
                 <ul className="list_order">
-                  <li><span>1</span>Select your preferred tours</li>
-                  <li><span>2</span>Select your preferred tours</li>
-                  <li><span>3</span>Select your preferred tours</li>
+                  <li><span>1</span>Segui i <strong>corsi online di fotografia</strong></li>
+                  <li><span>2</span>Condividi con la community le tue foto</li>
+                  <li><span>3</span>Diventa un master</li>
                 </ul>
                 <Button variant={'link'} to='/'>Inizia Gratis</Button>
               </Col>

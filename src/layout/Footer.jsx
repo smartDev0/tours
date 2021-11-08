@@ -1,6 +1,6 @@
 import classnames from "classnames"
 import React from "react"
-import { Container, Row, Col } from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import Typography from "../components/Typography";
 import Link from './../components/Link'
 import Button from './../components/Button'
@@ -148,24 +148,24 @@ const Footer = () => (
                 </Col>
                 <Col md={3}>
                     <Typography variant='heading3' className={classnames([styles.title])}>
-                        Newsletter
+                        UNISCITI A 18.000 WeShooters
                     </Typography>
                     <Typography variant="heading6">
-                        Join our newsletter to keep be informed about offers and news.
+                        Ricevi solo le notizie per migliorare la tua fotografia di paesaggio.
                     </Typography>
                     <form>
                         <div className="form-group">
                             <input name="email_newsletter" type="email" placeholder="Your mail" className="form-control"></input>
                         </div>
-                        <Button variant={'link'} type="button">Subscribe</Button>
+                        <Button variant={'link'} type="button">Iscriviti</Button>
                     </form>
                     <Typography variant='heading3' className={classnames([styles.title])}>
-                        SETTINGS
+                        Lingua Sito
                     </Typography>
                     <div className={classnames([styles.setting])}>
-                        <select name="lang" id="lang" defaultValue={"English"}>
-                            <option value="English">English</option>
-                            <option value="Italy">Italy</option>
+                        <select name="lang" id="lang" defaultValue={"Italian"}>
+                            <option value="Italian">🇮🇹 Italiano</option>
+                            <option value="English">🇺🇸 English</option>
                         </select>
                     </div>
                 </Col>
@@ -190,7 +190,7 @@ const Footer = () => (
                                 </Link>
                             </li>
                         </ul>
-                        <p>© Citytours 2021</p>
+                        <p>© WeShoot 2021 - Tutti i diritti riservati </p>
                     </div>
                 </Col>
             </Row>

@@ -1,61 +1,50 @@
-# Quick CircleCI configuration that builds your JS, runs tests, and prepares to deploy to a bucket.
-# With your manual approval, you can then deploy to your S3 bucket AND invalidate your cloudfront cache.
-#
-version: 2
+---
+version: 2.1
 jobs:
-  build:
-      docker:
-        # specify the version you desire here
-        - image: circleci/node:latest
-      working_directory: ~/myDirectory
-      steps:
-        - checkout
-        - attach_workspace:
-            at: ~/myDirectory
-
-        # Download and cache dependencies
-        - restore_cache:
-            keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
-        - run: yarn install
-        - save_cache:
-            paths:
-              - node_modules
-            key: v1-dependencies-{{ checksum "package.json" }}
-
-        # run tests!
-        - run: yarn test
-        - run: yarn build
-        - persist_to_workspace:
-            root: .
-            paths: dist
-  deploy:
+  setup:
     docker:
-      # specify the version you desire here
-      - image: cibuilds/aws:latest
-    working_directory: ~/myDirectory
+      - image: circleci/node:16.13.0
+    working_directory: ~/application
     steps:
-      - attach_workspace:
-          at: ~/myDirectory
-      - deploy:
-          name: Deploy to S3 if tests pass and branch is Master
-          command: |
-            aws s3 sync dist s3://${S3BUCKET} --region ${AWS_REGION} --acl public-read && aws cloudfront create-invalidation --distribution-id ${CloudFrontID} --paths ${YOURPATHS}
-workflows:
-  version: 2
+      - checkout
+      - run:
+          name: Update npm
+          command: "sudo npm install -g npm@latest"
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install npm wee
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - save_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/application
   build_and_deploy:
+    docker:
+      - image: circleci/node:16.13.0
+    working_directory: ~/application
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Deploy
+          command: |
+            npm run build && npm run deploy
+workflows:
+  version: 2.1
+  build:
     jobs:
-      - build
-      - hold:
+      - setup
+      - build_and_deploy:
+          requires:
+            - setup
           filters:
             branches:
-              only: staging
-          type: approval
-          requires:
-            - build
-      - deploy:
-          requires:
-            - hold
+              only:
+                - staging
