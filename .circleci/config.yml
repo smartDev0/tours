@@ -15,6 +15,11 @@ jobs:
       - run:
           name: Install npm wee
           command: npm install --save --legacy-peer-deps
+      - run:
+         name: Install aws cli
+         command: |
+           sudo apt-get update
+           sudo apt-get -y -qq install awscli
       - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
