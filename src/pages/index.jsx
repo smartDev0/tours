@@ -134,7 +134,19 @@ const IndexPage = ({ path }) => {
           {categories && categories.length > 0 &&
             (
               <Row className="small-gutters">
-                <Col md={6} sm={12}>
+                {categories.map((category, i) => {
+                  if (category.img) {
+                    return (
+                      <Col md={6} sm={12} className="mb-1">
+                        <CategoryCard link='/' url={category.img}>
+                          <Typography variant='heading2'>{category.name}</Typography>
+                          <Typography>{category.description}</Typography>
+                        </CategoryCard>
+                      </Col>
+                    )
+                  }
+                })}
+                {/* <Col md={6} sm={12}>
                   <CategoryCard link='/' url={categories[0].img}>
                     <Typography variant='heading2'>{categories[0]?.name}</Typography>
                     <Typography>{categories[0]?.description}</Typography>
@@ -161,7 +173,7 @@ const IndexPage = ({ path }) => {
                       </CategoryCard>
                     </Col>
                   </Row>
-                </Col>
+                </Col> */}
               </Row>
             )
           }
