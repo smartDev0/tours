@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Col, Container, Row } from 'react-bootstrap';
+import {Col, Container, Row} from 'react-bootstrap';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -265,7 +265,7 @@ const IndexPage = ({ path }) => {
                       url={course.img}
                       text={course.excerpt}
                     >
-                      <Button variant={'linkOutline'} to={course.url}>Read more</Button>
+                      <Button variant={'linkOutline'} to={course.url}>Inizia Corso</Button>
                     </CourseCard>
                   </Col>
                 ))}
