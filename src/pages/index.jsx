@@ -187,7 +187,6 @@ const IndexPage = ({ path }) => {
                 </CourseCard>
               </Col>
             </Row>
-            <hr />
             <br />
             <Row>
               <Col md={6}>

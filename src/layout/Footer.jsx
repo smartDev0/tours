@@ -160,7 +160,7 @@ const Footer = () => (
                         <Button variant={'link'} type="button">Iscriviti</Button>
                     </form>
                     <Typography variant='heading3' className={classnames([styles.title])}>
-                        Lingua Sito
+                        Lingua
                     </Typography>
                     <div className={classnames([styles.setting])}>
                         <select name="lang" id="lang" defaultValue={"Italian"}>
