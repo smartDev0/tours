@@ -66,7 +66,15 @@ const photos = [
 const IndexPage = ({ path }) => {
   const [categories, setCategories] = React.useState(null)
   const [courses, setCourses] = React.useState(null)
+  const [workshopImages, setWorkshopImages] = React.useState(null)
 
+  const getMeta = (url) => {
+    var img = new Image();
+    img.src = url;
+    img.onload = function () {
+      console.log(this.width)
+    }
+  }
   React.useEffect(async () => {
     const result = await fetch(
       `${process.env.GATSBY_API_URL}/category`
@@ -78,6 +86,19 @@ const IndexPage = ({ path }) => {
     ).then(res => res.json())
     setCourses(courseResult)
 
+    const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ "type": "group" })
+    }).then(res => res.json());
+    const data = workshopImageResult.map((item) => {
+      item.src = item.thumbnail_id;
+      console.log(item.thumbnail_id)
+      item.width = 4;
+      item.height = 3;
+      return item
+    })
+    setWorkshopImages(data)
   }, [])
   return (
     <>
@@ -206,9 +227,12 @@ const IndexPage = ({ path }) => {
               Non Aspettare
             </Typography>
           </div>
-          <GalleryCard
-            photos={photos}
-          />
+          {workshopImages && workshopImages.length > 0 && (
+            <GalleryCard
+              photos={workshopImages}
+            />
+          )}
+
         </Container>
         <div style={{ backgroundColor: 'white' }}>
           <Container fluid="xl" className="pt-8 pb-8">
