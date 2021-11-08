@@ -1,11 +1,13 @@
 import classnames from "classnames"
 import React, { useState, useCallback } from "react";
+import { Container } from 'react-bootstrap';
 import PropTypes from "../util/PropTypes"
 import * as styles from "./GalleryCard.module.scss"
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
-
-const GalleryCard = ({ children, photos, }) => {
+import capitalize from '../util/capitalize';
+import Typography from "./Typography"
+const GalleryCard = ({ children, photos, theme }) => {
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -19,34 +21,51 @@ const GalleryCard = ({ children, photos, }) => {
         setViewerIsOpen(false);
     };
     return (
-        <div className={classnames([styles.container])}>
-            <Gallery photos={photos} onClick={openLightbox} />
-            <ModalGateway>
-                {viewerIsOpen ? (
-                    <Modal onClose={closeLightbox}>
-                        <Carousel
-                            currentIndex={currentImage}
-                            views={photos.map(x => ({
-                                ...x,
-                                srcset: x.srcSet,
-                                caption: x.title
-                            }))}
-                        />
-                    </Modal>
-                ) : null}
-            </ModalGateway>
-            {children}
-        </div>
+        <div className={classnames([styles.container, {
+            [styles[`theme${capitalize(theme)}`]]: theme,
+        },])}>
+            <Container fluid="xl" className="pt-8 pb-8" >
+                <div className="main-title">
+                    <Typography variant='heading2'>
+                        Il momento giusto é adesso.
+                    </Typography>
+                    <Typography variant='heading3'>
+                        Non Aspettare
+                    </Typography>
+                </div>
+                <div>
+                    <Gallery photos={photos} onClick={openLightbox} />
+                    <ModalGateway>
+                        {viewerIsOpen ? (
+                            <Modal onClose={closeLightbox}>
+                                <Carousel
+                                    currentIndex={currentImage}
+                                    views={photos.map(x => ({
+                                        ...x,
+                                        srcset: x.srcSet,
+                                        caption: x.title
+                                    }))}
+                                />
+                            </Modal>
+                        ) : null}
+                    </ModalGateway>
+                    {children}
+                </div>
+            </Container>
 
+
+        </div>
     )
 }
 
 GalleryCard.propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node,
+    theme: PropTypes.string,
 }
 
 GalleryCard.defaultProps = {
-    children: null
+    children: null,
+    theme: null
 }
 
 export default GalleryCard

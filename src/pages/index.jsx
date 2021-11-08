@@ -167,73 +167,63 @@ const IndexPage = () => {
           </Row>
         </Container>
       </div>
-      <div style={{ backgroundColor: "rgb(34, 34, 34)" }}>
-        <Container fluid="xl" className="pt-8 pb-8" >
+
+      {workshopImages && workshopImages.length > 0 && (
+        <GalleryCard
+          theme="dark"
+          photos={workshopImages}
+        />
+      )}
+      <div style={{ backgroundColor: 'white' }}>
+        <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
             <Typography variant='heading2'>
-              Il momento giusto é adesso.
+              Ecco i <strong style={{ color: '#FC4D33' }}>Corsi di Fotografia</strong> WeShoot
             </Typography>
             <Typography variant='heading3'>
-              Non Aspettare
+              Impara da vincitori di contest internazionali, sviluppa il tuo stile fotografico.
             </Typography>
           </div>
-          {workshopImages && workshopImages.length > 0 && (
-            <GalleryCard
-              photos={workshopImages}
-            />
+          {courses && courses.length > 0 && (
+            <Row>
+              {courses.map((course, i) => (
+                <Col lg={4} key={i} className="mb-1">
+                  <CourseCard
+                    title={course.title}
+                    tour={120}
+                    url={course.img}
+                    text={course.excerpt}
+                  >
+                    <Button variant={'linkOutline'} to={course.url}>Inizia Corso</Button>
+                  </CourseCard>
+                </Col>
+              ))}
+            </Row>
           )}
 
+          <Row className="pt-8 pb-8">
+            <Col md={6}>
+              <img src={accademia} alt="laptop" className="img-fluid"></img>
+            </Col>
+            <Col md={6}>
+              <Typography variant="heading3">
+                Accedi all'<strong style={{ color: '#FC4D33' }}>accademia fotografica</strong>
+              </Typography>
+              <Typography variant="heading4">
+                Migliora le tue foto seguendo i consigli di professionisti
+              </Typography>
+              <br />
+              <ul className="list_order">
+                <li><span>1</span>Segui i <strong>corsi online di fotografia</strong></li>
+                <li><span>2</span>Condividi con la community le tue foto</li>
+                <li><span>3</span>Diventa un master</li>
+              </ul>
+              <Button variant={'link'} to='/'>Inizia Gratis</Button>
+            </Col>
+          </Row>
         </Container>
-        <div style={{ backgroundColor: 'white' }}>
-          <Container fluid="xl" className="pt-8 pb-8">
-            <div className="main-title">
-              <Typography variant='heading2'>
-                Ecco i <strong style={{ color: '#FC4D33' }}>Corsi di Fotografia</strong> WeShoot
-              </Typography>
-              <Typography variant='heading3'>
-                Impara da vincitori di contest internazionali, sviluppa il tuo stile fotografico.
-              </Typography>
-            </div>
-            {courses && courses.length > 0 && (
-              <Row>
-                {courses.map((course, i) => (
-                  <Col lg={4} key={i} className="mb-1">
-                    <CourseCard
-                      title={course.title}
-                      tour={120}
-                      url={course.img}
-                      text={course.excerpt}
-                    >
-                      <Button variant={'linkOutline'} to={course.url}>Inizia Corso</Button>
-                    </CourseCard>
-                  </Col>
-                ))}
-              </Row>
-            )}
-
-            <Row className="pt-8 pb-8">
-              <Col md={6}>
-                <img src={accademia} alt="laptop" className="img-fluid"></img>
-              </Col>
-              <Col md={6}>
-                <Typography variant="heading3">
-                  Accedi all'<strong style={{ color: '#FC4D33' }}>accademia fotografica</strong>
-                </Typography>
-                <Typography variant="heading4">
-                  Migliora le tue foto seguendo i consigli di professionisti
-                </Typography>
-                <br />
-                <ul className="list_order">
-                  <li><span>1</span>Segui i <strong>corsi online di fotografia</strong></li>
-                  <li><span>2</span>Condividi con la community le tue foto</li>
-                  <li><span>3</span>Diventa un master</li>
-                </ul>
-                <Button variant={'link'} to='/'>Inizia Gratis</Button>
-              </Col>
-            </Row>
-          </Container>
-        </div>
       </div>
+
     </>
   )
 }

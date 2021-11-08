@@ -8,3 +8,20 @@
         border-radius: 7px;
     }
 }
+
+.theme {
+    &-white {
+        background: $white;
+        color: $standard;
+    }
+
+    &-dark {
+        background: $standard;
+        color: $white;
+    }
+
+    &-grey {
+        background: $grey-900;
+        color: $white;
+    }
+}
