@@ -29,7 +29,7 @@ const IndexPage = ({ path }) => {
               <div className="intro_title text-center">
                 <Typography className="animated fadeInDown" variant='heading1'>SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE
                 </Typography>
-                <Container fluid="xl" className="margin_60">
+                <Container fluid="xl" className="pt-6 pb-6">
                   <Button variant={'outline'}>Scopri i corsi </Button>
                 <Button variant={'intro'}>Scopri i Viaggi </Button>
                 </Container>
@@ -39,7 +39,7 @@ const IndexPage = ({ path }) => {
         </Container>
       </BackgroundVideo>
       <div style={{ backgroundColor: 'white' }}>
-        <Container fluid="xl" className="margin_60">
+        <Container fluid="xl" className="pt-6 pb-6">
           <div className="main-title">
             <Typography variant='heading2'>
             Esplora le collezioni dei <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong>
@@ -81,7 +81,7 @@ const IndexPage = ({ path }) => {
         </Container>
       </div>
       <div style={{ backgroundColor: 'white' }}>
-        <Container fluid="xl" className="margin_60">
+        <Container fluid="xl" className="pt-6 pb-6">
           <div className="main-title">
             <Typography variant='heading2'>
               I migliori <strong style={{ color: '#ff4424' }}>Viaggi Fotografici</strong> di sempre
@@ -91,7 +91,7 @@ const IndexPage = ({ path }) => {
             </Typography>
           </div>
           <Row>
-            <Col lg={4} md={6} className="zoomIn">
+            <Col lg={4} md={6} className="zoomIn mb-1">
               <TripCard
                 link='/'
                 title='Tunisia: Esperienza unica nel deserto del Sahara'
@@ -103,7 +103,7 @@ const IndexPage = ({ path }) => {
                 <Button variant={'link'} to='/'>Vedi viaggio</Button>
               </TripCard>
             </Col>
-            <Col lg={4} md={6} className="zoomIn">
+            <Col lg={4} md={6} className="zoomIn mb-1">
               <TripCard
                 link='/'
                 title="Islanda: un itinerario esclusivo per scoprire l'isola e l'aurora boreale"
@@ -115,7 +115,7 @@ const IndexPage = ({ path }) => {
                 <Button variant={'link'} to='/'>Vedi viaggio</Button>
               </TripCard>
             </Col>
-            <Col lg={4} md={6} className="zoomIn">
+            <Col lg={4} md={6} className="zoomIn mb-1">
               <TripCard
                 link='/'
                 title='Norvegia: Tra gli incredibili fiordi del Nord'
@@ -131,7 +131,7 @@ const IndexPage = ({ path }) => {
         </Container>
       </div>
       <div style={{ backgroundColor: 'rgb(34, 34, 34)' }}>
-        <Container fluid="xl" className="margin_60">
+        <Container fluid="xl" className="pt-6 pb-6">
           <div className="main-title">
             <Typography variant='heading2'>
               Il momento giusto é adesso.
@@ -146,7 +146,7 @@ const IndexPage = ({ path }) => {
           </div>
         </Container>
         <div style={{ backgroundColor: 'white' }}>
-          <Container fluid="xl" className="margin_60">
+          <Container fluid="xl" className="pt-6 pb-6">
             <div className="main-title">
               <Typography variant='heading2'>
                 Ecco i <strong style={{ color: '#FC4D33' }}>Corsi di Fotografia</strong> WeShoot
@@ -187,8 +187,7 @@ const IndexPage = ({ path }) => {
                 </CourseCard>
               </Col>
             </Row>
-            <br />
-            <Row>
+            <Row className="pt-8 pb-8">
               <Col md={6}>
                 <img src={accademia} alt="laptop" className="img-fluid"></img>
               </Col>

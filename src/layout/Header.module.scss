@@ -101,7 +101,10 @@
     }
 
     nav {
-        margin-top: 20px;
+        margin-top: 16px;
+        @include media-breakpoint-up(lg) {
+            margin-top: 20px;
+        }
     }
 
     .toggle_switch {
