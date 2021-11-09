@@ -61,11 +61,18 @@ const GalleryCard = ({ children, photos, theme }) => {
 GalleryCard.propTypes = {
     children: PropTypes.node,
     theme: PropTypes.string,
+    photos: PropTypes.arrayOf(
+        PropTypes.shape({
+            src: PropTypes.string,
+            width: PropTypes.number,
+            height: PropTypes.number,
+        }))
 }
 
 GalleryCard.defaultProps = {
     children: null,
-    theme: null
+    theme: null,
+    photos: null
 }
 
 export default GalleryCard

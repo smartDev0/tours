@@ -47,15 +47,30 @@ const IndexPage = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "type": "group" })
     }).then(res => res.json());
-    const data = workshopImageResult.map((item) => {
+    const data = await Promise.all(workshopImageResult.map(async (item) => {
       item.src = process.env.GATSBY_WESHOOT_AWS_URL + item.file_id;
       item.thumbnail = process.env.GATSBY_WESHOOT_AWS_URL + item.thumbnail_id;
-      item.width = 4;
-      item.height = 4;
+      const img = new Image();
+      img.src = process.env.GATSBY_WESHOOT_AWS_URL + item.file_id;
+      await img.decode();
+      const { height, width } = await calculateRatio(img.height, img.width)
+      item.height = height
+      item.width = width
       return item
-    })
+    }))
     setWorkshopImages(data)
   }, [])
+
+
+  const calculateRatio = (height, width) => {
+    for (var num = height; num > 1; num--) {
+      if ((width % num) == 0 && (height % num) == 0) {
+        width = width / num;
+        height = height / num;
+      }
+    }
+    return { height, width };
+  }
 
   const getDays = (end, start) => {
     const diffTime = Math.abs(new Date(end).getTime() - new Date(start).getTime());
