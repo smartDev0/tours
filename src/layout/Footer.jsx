@@ -1,11 +1,12 @@
 import classnames from "classnames"
 import React from "react"
-import { Col, Container, Row } from 'react-bootstrap';
-import { ToastProvider } from 'react-toast-notifications';
+import {Col, Container, Row} from 'react-bootstrap';
+import {ToastProvider} from 'react-toast-notifications';
 import Typography from "../components/Typography";
 import Link from './../components/Link'
 import * as styles from "./Footer.module.scss"
 import Newsletter from '../components/NewsletterForm'
+
 const Footer = () => (
     <footer className={classnames([styles.container])}>
         <Container>
@@ -153,7 +154,7 @@ const Footer = () => (
                     <Typography variant="heading6">
                         Ricevi solo le notizie per migliorare la tua fotografia di paesaggio.
                     </Typography>
-                    <ToastProvider placement="top-center">
+                    <ToastProvider placement="bottom-center">
                         <Newsletter />
                     </ToastProvider>
                     <Typography variant='heading3' className={classnames([styles.title])}>
