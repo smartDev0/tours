@@ -11,8 +11,8 @@
     -->
     <preset_collections/>
     <framework>i18next</framework>
-    <filename>translations.babbel.babel</filename>
-    <source_root_dir/>
+    <filename>translations.babel</filename>
+    <source_root_dir>.</source_root_dir>
     <folder_node>
         <name/>
         <children>
@@ -22,6 +22,152 @@
                     <folder_node>
                         <name>ui</name>
                         <children>
+                            <folder_node>
+                                <name>layout</name>
+                                <children>
+                                    <folder_node>
+                                        <name>header</name>
+                                        <children>
+                                            <concept_node>
+                                                <name>academy</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>allTours</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>blog</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>courses</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>photoTours</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>toursCalendar</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>toursCollections</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                            <concept_node>
+                                                <name>toursDestinations</name>
+                                                <definition_loaded>false</definition_loaded>
+                                                <description/>
+                                                <comment/>
+                                                <default_text/>
+                                                <translations>
+                                                    <translation>
+                                                        <language>en-US</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                    <translation>
+                                                        <language>it-IT</language>
+                                                        <approved>false</approved>
+                                                    </translation>
+                                                </translations>
+                                            </concept_node>
+                                        </children>
+                                    </folder_node>
+                                </children>
+                            </folder_node>
                             <folder_node>
                                 <name>pages</name>
                                 <children>
@@ -61,20 +207,20 @@
         <language>
             <code>en-US</code>
             <source_id/>
-            <source_file>locales/en</source_file>
+            <source_file>i18n/locales/en</source_file>
         </language>
         <language>
             <code>it-IT</code>
             <source_id/>
-            <source_file>locales/it</source_file>
+            <source_file>i18n/locales/it</source_file>
         </language>
     </languages>
     <translation_files>
         <translation_file>
-            <file>locales/en</file>
+            <file>i18n/locales/en</file>
         </translation_file>
         <translation_file>
-            <file>locales/it</file>
+            <file>i18n/locales/it</file>
         </translation_file>
     </translation_files>
     <editor_configuration>

@@ -1,8 +1,20 @@
 {
 	"ui": {
+		"layout": {
+			"header": {
+				"academy": "Photography Academy",
+				"allTours": "Discover Photo Tours",
+				"blog": "Photography Blog",
+				"courses": "Photography Courses",
+				"photoTours": "Photo Tours",
+				"toursCalendar": "Photo Tours Calendar",
+				"toursCollections": "Photo Tours Collections",
+				"toursDestinations": "Photo Tours Destinations"
+			}
+		},
 		"pages": {
 			"home": {
-				"title": "SHOOT WITH THOSE WHO SHARE YOUR SAME PASSION"
+				"title": "Shoot with those who share your same passion"
 			}
 		}
 	}

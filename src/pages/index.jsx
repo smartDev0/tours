@@ -10,7 +10,7 @@ import TripCard from "../components/TripCard";
 import GalleryCard from '../components/GalleryCard';
 import CourseCard from "../components/CourseCard";
 
-import backgroundVideo from './../../static/media/aurora-boreale-viaggio-fotografico-norvegia.mp4'
+import backgroundVideo from './../../static/media/aurora-boreale-viaggio-fotografico-norvegia-2.mp4'
 import accademia from './../../static/homepage/Corso_Fotografia_online_weshoot.jpg'
 
 import '../scss/bootstrap.scss';
@@ -74,6 +74,7 @@ const IndexPage = () => {
                 <Typography className="animated fadeInDown" variant='heading1'>
                   {t('ui.pages.home.title')}
                 </Typography>
+
                 <Container fluid="xl" className="pt-8 pb-8">
                   <Button variant={'outline'} className={'mb-1'}>Scopri i corsi </Button>
                   <Button variant={'intro'} className={'mb-1'}>Scopri i Viaggi </Button>

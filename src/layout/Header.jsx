@@ -6,11 +6,13 @@ import Link from '../components/Link';
 import useScrollPos from './../hooks/useScrollPos';
 import * as styles from './Header.module.scss'
 import Logo from '../../static/logo/WeShoot-logo-extended-black.svg'
+import {useTranslation} from "gatsby-plugin-react-i18next";
 
 const Header = ({ siteTitle }) => {
     const [isScrolled, setScrolled] = React.useState(false);
     const [isActive, setActive] = React.useState(false)
     const [isSubMenu, setSubMenu] = React.useState(false)
+    const { t } = useTranslation();
 
     useScrollPos(offset => {
         setScrolled(offset > 100);
@@ -25,7 +27,7 @@ const Header = ({ siteTitle }) => {
                 <Row>
                     <Col lg={3} sm={3} xs={3}>
                         <div className={styles.logo_home}>
-                            <h1><Link to='/' title="City tours travel template">City Tours travel template</Link></h1>
+                            <h1><Link to='/' title="WeShoot | Viaggi Fotografici">WeShoot | Viaggi Fotografici</Link></h1>
                         </div>
                     </Col>
                     <nav className="col-9 col-sm-9 col-xs-9">
@@ -46,7 +48,7 @@ const Header = ({ siteTitle }) => {
                             {isActive && (
                                 <>
                                     <div className={styles.header_menu}>
-                                        <img src={Logo} width="160" height="34" alt="City tours"></img>
+                                        <img src={Logo} width="160" height="34" alt="WeShoot | Viaggi Fotografici"></img>
                                     </div>
                                     <a  className={styles.open_close}
                                         onClick={() => { setActive(false) }}
@@ -61,61 +63,61 @@ const Header = ({ siteTitle }) => {
                                         className={styles.show_sub_menu}
                                         onClick={() => { setSubMenu(!isSubMenu) }}
                                     >
-                                        Photo Tour <i className="icon-down-open-mini"></i>
+                                        {t('ui.layout.header.photoTours')} <i className="icon-down-open-mini"></i>
                                     </a>
                                     <ul className={classnames({
                                         [styles.show_normal]: isSubMenu,
                                     })}>
                                         <li>
                                             <Link to='/'>
-                                                All tours
+                                                {t('ui.layout.header.allTours')}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to='/'>
-                                                Tour Collections
+                                                {t('ui.layout.header.toursCollections')}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to='/'>
-                                                Tour Calendar
+                                                {t('ui.layout.header.toursCalendar')}
                                             </Link>
                                         </li>
                                         <li>
                                             <Link to='/'>
-                                                Destinations
+                                                {t('ui.layout.header.toursDestinations')}
                                             </Link>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.show_sub_menu}>
-                                        Photo Courses
+                                    <Link to='/accademia/corsi' className={styles.show_sub_menu}>
+                                        {t('ui.layout.header.courses')}
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.show_sub_menu}>
-                                        Photo Academy
+                                    <Link to='/accademia' className={styles.show_sub_menu}>
+                                        {t('ui.layout.header.academy')}
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/' className={styles.show_sub_menu}>
-                                        Blog
+                                    <Link to='/blog' className={styles.show_sub_menu}>
+                                        {t('ui.layout.header.blog')}
                                     </Link>
                                 </li>
                             </ul>
                         </div>
                         <ul className={styles.top_tools}>
-                            <li>
-                                <a className="search-overlay-menu-btn"><i className="icon_search"></i></a>
-                            </li>
-                            <li>
-                                <div className="dropdown dropdown-cart">
-                                    <a href="#" data-toggle="dropdown" className="cart_bt">
-                                        <i className="icon_bag_alt"></i>
-                                    </a>
-                                </div>
-                            </li>
+                            {/*<li>*/}
+                            {/*    <a className="search-overlay-menu-btn"><i className="icon_search"></i></a>*/}
+                            {/*</li>*/}
+                            {/*<li>*/}
+                            {/*    <div className="dropdown dropdown-cart">*/}
+                            {/*        <a href="#" data-toggle="dropdown" className="cart_bt">*/}
+                            {/*            <i className="icon_bag_alt"></i>*/}
+                            {/*        </a>*/}
+                            {/*    </div>*/}
+                            {/*</li>*/}
                         </ul>
                     </nav>
                 </Row>

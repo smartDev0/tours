@@ -96,6 +96,12 @@ module.exports = {
         routeChangeEventName: "page_view",
       },
     },
+    {
+      resolve: "gatsby-plugin-brotli",
+      options: {
+        extensions: ["css", "html", "js", "svg"],
+      },
+    },
     // {
     //   resolve: "gatsby-plugin-iubenda-cookie-footer",
     //   options: {

@@ -1,8 +1,20 @@
 {
 	"ui": {
+		"layout": {
+			"header": {
+				"academy": "Accademia Fotografica",
+				"allTours": "Scopri i Viaggi Fotografici",
+				"blog": "Blog Fotografia",
+				"courses": "Corsi Fotografia",
+				"photoTours": "Viaggi Fotografici",
+				"toursCalendar": "Calendario Viaggi Fotografici",
+				"toursCollections": "Collezioni Viaggi Fotografici",
+				"toursDestinations": "Destinazioni Viaggi Fotografici"
+			}
+		},
 		"pages": {
 			"home": {
-				"title": "SCATTA CON CHI CONDIVIDE LA TUA STESSA PASSIONE"
+				"title": "Scatta con chi condivide la tua stessa passione"
 			}
 		}
 	}
