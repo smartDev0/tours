@@ -31,7 +31,6 @@ const IndexPage = () => {
       `${process.env.GATSBY_API_URL}/category`
     ).then(res => res.json())
     setCategories(result)
-    console.log(result)
 
     const courseResult = await fetch(
       `${process.env.GATSBY_API_URL}/course`
