@@ -141,7 +141,7 @@ const IndexPage = () => {
                 return (
                   <Col lg={4} md={6} className="zoomIn mb-2" key={workshop.id}>
                     <TripCard
-                      link='/'
+                      link={'viaggi-fotografici/destinazioni' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}
                       title={workshop.name}
                       day={getDays(workshop.end, workshop.start)}
                       price={workshop.price}
