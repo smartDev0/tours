@@ -40,7 +40,7 @@ const IndexPage = () => {
     const workshopResult = await fetch(
       `${process.env.GATSBY_API_URL}/workshop`
     ).then(res => res.json())
-
+    console.log(workshopResult)
     setWorkshops(workshopResult)
 
     const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
@@ -139,7 +139,7 @@ const IndexPage = () => {
                     url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
                   >
                     <Button variant={'linkOutline'}>Vedi date</Button>
-                    <Button variant={'link'} to='/'>Vedi viaggio</Button>
+                    <Button variant={'link'} to={workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
                   </TripCard>
                 </Col>
               ))}
