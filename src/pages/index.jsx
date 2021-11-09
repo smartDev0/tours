@@ -31,6 +31,7 @@ const IndexPage = () => {
       `${process.env.GATSBY_API_URL}/category`
     ).then(res => res.json())
     setCategories(result)
+    console.log(result)
 
     const courseResult = await fetch(
       `${process.env.GATSBY_API_URL}/course`
@@ -40,6 +41,7 @@ const IndexPage = () => {
     const workshopResult = await fetch(
       `${process.env.GATSBY_API_URL}/workshop`
     ).then(res => res.json())
+
     setWorkshops(workshopResult)
 
     const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
@@ -60,6 +62,7 @@ const IndexPage = () => {
   const getDays = (end, start) => {
     const diffTime = Math.abs(new Date(end).getDate() - new Date(start).getDate());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    console.log(diffDays)
     return diffDays
   }
   return (
@@ -102,7 +105,7 @@ const IndexPage = () => {
                   if (category.img) {
                     return (
                       <Col md={6} sm={12} className="mb-1" key={i}>
-                        <CategoryCard link='/' url={category.img}>
+                        <CategoryCard link={category.url_original + '/collezioni'} url={category.img}>
                           <Typography variant='heading2'>{category.name}</Typography>
                           <Typography variant='heading3'>{category.description}</Typography>
                         </CategoryCard>
