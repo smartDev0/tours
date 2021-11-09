@@ -5,9 +5,8 @@ import {Col, Container, Row} from 'react-bootstrap';
 import Link from '../components/Link';
 import useScrollPos from './../hooks/useScrollPos';
 import * as styles from './Header.module.scss'
-import Logo from '../../static/logo/WeShoot-logo-extended-black.svg'
 import { useTranslation } from "react-i18next"
-
+import { StaticImage } from "gatsby-plugin-image"
 const Header = ({ siteTitle }) => {
     const [isScrolled, setScrolled] = React.useState(false);
     const [isActive, setActive] = React.useState(false)
@@ -48,7 +47,7 @@ const Header = ({ siteTitle }) => {
                             {isActive && (
                                 <>
                                     <div className={styles.header_menu}>
-                                        <img src={Logo} width="160" height="34" alt="WeShoot | Viaggi Fotografici"></img>
+                                        <StaticImage src={'../../static/logo/WeShoot-logo-extended-black.svg'} width="160" height="34" alt="WeShoot | Viaggi Fotografici"/>
                                     </div>
                                     <a  className={styles.open_close}
                                         onClick={() => { setActive(false) }}
