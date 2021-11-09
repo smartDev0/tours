@@ -54,7 +54,7 @@ const IndexPage = () => {
       body: JSON.stringify({ "type": "group" })
     }).then(res => res.json());
     const data = workshopImageResult.map((item) => {
-      item.src = process.env.GATSBY_WESHOOT_AWS_URL + item.thumbnail_id;
+      item.src = process.env.GATSBY_WESHOOT_AWS_URL + item.file_id;
       item.width = 4;
       item.height = 4;
       return item
@@ -103,7 +103,7 @@ const IndexPage = () => {
                       <Col md={6} sm={12} className="mb-1" key={i}>
                         <CategoryCard link='/' url={category.img}>
                           <Typography variant='heading2'>{category.name}</Typography>
-                          <Typography>{category.description}</Typography>
+                          <Typography variant='heading3'>{category.description}</Typography>
                         </CategoryCard>
                       </Col>
                     )
