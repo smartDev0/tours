@@ -1,0 +1,51 @@
+import React, { useState } from "react"
+import { useToasts } from 'react-toast-notifications'
+import Button from './Button'
+
+const NewsletterForm = () => {
+    const { addToast } = useToasts();
+    const [mail, setMail] = useState("");
+
+    const handleChange = e => {
+        setMail(e.target.value)
+    }
+
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        if (emailValidation) {
+            console.log(mail)
+            const result = await fetch(`${process.env.GATSBY_API_URL}/newsletter`, {
+                method: 'post',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ "email": mail })
+            }).then(res => res.json());
+            if (result.status === 200) {
+                addToast('form is submitted successfully.', {
+                    appearance: 'success',
+                    autoDismiss: true,
+                })
+            }
+        }
+    }
+
+    const emailValidation = () => {
+        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if (!mail || regex.test(mail) === false) {
+            return false;
+        }
+        return true;
+    }
+
+    return (
+        <form onSubmit={onSubmit}>
+            <div className="form-group">
+                <input type="email" placeholder="Your mail" className="form-control" value={mail} onChange={handleChange} required />
+            </div>
+            <Button variant={'link'} submit>Iscriviti</Button>
+        </form>
+    )
+}
+
+
+export default NewsletterForm
