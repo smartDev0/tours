@@ -21,7 +21,8 @@
             transition: all .3s ease-in-out;
             max-height: 180px;
             width: 100%;
-
+            object-fit: cover;
+            overflow: hidden;
             &:hover {
                 transform: scale(1);
             }
