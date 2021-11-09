@@ -50,7 +50,7 @@ TripCard.propTypes = {
     url: PropTypes.string,
     link: PropTypes.string,
     title: PropTypes.string,
-    day: PropTypes.string,
+    day: PropTypes.number,
     price: PropTypes.number
 }
 

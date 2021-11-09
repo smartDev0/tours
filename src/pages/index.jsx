@@ -1,6 +1,6 @@
 import * as React from "react"
-import {Col, Container, Row} from 'react-bootstrap';
-import {useTranslation} from 'gatsby-plugin-react-i18next';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -21,7 +21,7 @@ import '../scss/vender.css'
 const IndexPage = () => {
   const [categories, setCategories] = React.useState(null)
   const [courses, setCourses] = React.useState(null)
-  const [workshop, setWorkshop] = React.useState(null)
+  const [workshops, setWorkshops] = React.useState(null)
   const [workshopImages, setWorkshopImages] = React.useState(null)
 
   const { t } = useTranslation();
@@ -37,16 +37,10 @@ const IndexPage = () => {
     ).then(res => res.json())
     setCourses(courseResult)
 
-    // const workshopResult = await fetch(
-    //   `${process.env.GATSBY_API_URL}/workshop`
-    // ).then(res => res.json())
-    // const filterWorkshop = workshopResult.filter(item => {
-    //   if(item.public === 1) {
-    //     return item
-    //   }
-    // })
-    // console.log(filterWorkshop)
-    // setWorkshop(filterWorkshop)
+    const workshopResult = await fetch(
+      `${process.env.GATSBY_API_URL}/workshop`
+    ).then(res => res.json())
+    setWorkshops(workshopResult)
 
     const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
       method: 'post',
@@ -62,6 +56,12 @@ const IndexPage = () => {
     })
     setWorkshopImages(data)
   }, [])
+
+  const getDays = (end, start) => {
+    const diffTime = Math.abs(new Date(end).getDate() - new Date(start).getDate());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays
+  }
   return (
     <>
       <SEO
@@ -125,44 +125,24 @@ const IndexPage = () => {
               Scopri con noi le meraviglie intramontabili, scatta nei posti piú belli del mondo.
             </Typography>
           </div>
-          <Row>
-            <Col lg={4} md={6} className="zoomIn mb-1">
-              <TripCard
-                link='/'
-                title='Tunisia: Esperienza unica nel deserto del Sahara'
-                day='5'
-                price={1699}
-                url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_01747422100f961d69dc3db870ab7c6b.jpg'}
-              >
-                <Button variant={'linkOutline'}>Vedi date</Button>
-                <Button variant={'link'} to='/'>Vedi viaggio</Button>
-              </TripCard>
-            </Col>
-            <Col lg={4} md={6} className="zoomIn mb-1">
-              <TripCard
-                link='/'
-                title="Islanda: un itinerario esclusivo per scoprire l'isola e l'aurora boreale"
-                day='5'
-                price={749}
-                url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_dfa87ee3456be3cad795922240f04549.jpg'}
-              >
-                <Button variant={'linkOutline'}>Vedi date</Button>
-                <Button variant={'link'} to='/'>Vedi viaggio</Button>
-              </TripCard>
-            </Col>
-            <Col lg={4} md={6} className="zoomIn mb-1">
-              <TripCard
-                link='/'
-                title='Norvegia: Tra gli incredibili fiordi del Nord'
-                day='5'
-                price={749}
-                url={'https://weshootpictures.s3-eu-west-1.amazonaws.com/2/Workshop_photography_events_af3df2b421bc866ef49574603a31ea4c.jpg'}
-              >
-                <Button variant={'linkOutline'}>Vedi date</Button>
-                <Button variant={'link'} to='/'>Vedi viaggio</Button>
-              </TripCard>
-            </Col>
-          </Row>
+          {workshops && workshops.length > 0 && (
+            <Row>
+              {workshops.map(workshop => (
+                <Col lg={4} md={6} className="zoomIn mb-2" key={workshop.id}>
+                  <TripCard
+                    link='/'
+                    title={workshop.name}
+                    day={getDays(workshop.end, workshop.start)}
+                    price={workshop.price}
+                    url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
+                  >
+                    <Button variant={'linkOutline'}>Vedi date</Button>
+                    <Button variant={'link'} to='/'>Vedi viaggio</Button>
+                  </TripCard>
+                </Col>
+              ))}
+            </Row>
+          )}
         </Container>
       </div>
 
