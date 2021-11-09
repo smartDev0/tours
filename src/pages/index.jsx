@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from "react-i18next"
+import { StaticImage } from "gatsby-plugin-image"
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -11,12 +12,6 @@ import GalleryCard from '../components/GalleryCard';
 import CourseCard from "../components/CourseCard";
 
 import backgroundVideo from './../../static/media/aurora-boreale-viaggio-fotografico-norvegia-2.mp4'
-import accademia from './../../static/homepage/Corso_Fotografia_online_weshoot.jpg'
-
-import '../scss/bootstrap.scss';
-import '../scss/main.scss';
-import '../scss/vender.css'
-
 
 const IndexPage = () => {
   const [categories, setCategories] = React.useState(null)
@@ -200,7 +195,7 @@ const IndexPage = () => {
 
           <Row className="pt-8 pb-8">
             <Col md={6}>
-              <img src={accademia} alt="laptop" className="img-fluid"></img>
+              <StaticImage src={'./../../static/homepage/Corso_Fotografia_online_weshoot.jpg'} alt="laptop" className="img-fluid" />
             </Col>
             <Col md={6}>
               <Typography variant="heading3">

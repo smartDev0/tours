@@ -6,6 +6,10 @@ import Header from './Header';
 import { withTrans } from '../i18n/withTrans'
 import * as styles from './Layout.module.scss';
 
+import '../scss/bootstrap.scss';
+import '../scss/main.scss';
+import '../scss/vender.css'
+
 const propTypes = {
     children: PropTypes.node,
 };
@@ -30,7 +34,7 @@ const Layout = ({ location, children }) => (
             {children}
         </main>
         <Footer />
-        
+
     </>
 );
 
