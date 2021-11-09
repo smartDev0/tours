@@ -31,6 +31,7 @@ const IndexPage = () => {
       `${process.env.GATSBY_API_URL}/category`
     ).then(res => res.json())
     setCategories(result)
+    console.log(result)
 
     const courseResult = await fetch(
       `${process.env.GATSBY_API_URL}/course`
@@ -117,7 +118,7 @@ const IndexPage = () => {
                   if (category.img) {
                     return (
                       <Col md={6} sm={12} className="mb-1" key={i}>
-                        <CategoryCard link={category.url_original + '/collezioni'} url={category.img}>
+                        <CategoryCard link={'/viaggi-fotografici/collezioni/' + category.url_original} url={category.img}>
                           <Typography variant='heading2'>{category.name}</Typography>
                           <Typography variant='heading3'>{category.description}</Typography>
                         </CategoryCard>
