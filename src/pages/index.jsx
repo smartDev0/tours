@@ -55,6 +55,7 @@ const IndexPage = () => {
     }).then(res => res.json());
     const data = workshopImageResult.map((item) => {
       item.src = process.env.GATSBY_WESHOOT_AWS_URL + item.file_id;
+      item.thumbnail = process.env.GATSBY_WESHOOT_AWS_URL + item.thumbnail_id;
       item.width = 4;
       item.height = 4;
       return item
@@ -168,6 +169,7 @@ const IndexPage = () => {
       {workshopImages && workshopImages.length > 0 && (
         <GalleryCard
           theme="dark"
+          maxRows={3}
           photos={workshopImages}
         />
       )}
