@@ -25,6 +25,7 @@ const NewsletterForm = () => {
                     appearance: 'success',
                     autoDismiss: true,
                 })
+                setMail('')
             }
         }
     }
