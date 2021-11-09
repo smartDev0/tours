@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import { useToasts } from 'react-toast-notifications'
+import React, {useState} from "react"
+import {useToasts} from 'react-toast-notifications'
 import Button from './Button'
 
 const NewsletterForm = () => {
@@ -20,7 +20,7 @@ const NewsletterForm = () => {
                 body: JSON.stringify({ "email": mail })
             }).then(res => res.json());
             if (result.status === 200) {
-                addToast('form is submitted successfully.', {
+                addToast('Yay ✈️, pronto a volare? Controlla la tua email e conferma️', {
                     appearance: 'success',
                     autoDismiss: true,
                 })
@@ -30,7 +30,7 @@ const NewsletterForm = () => {
     }
 
     const emailValidation = () => {
-        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        const regex = /^(([^<>()[\],;:\s@]+(\.[^<>()[\],;:\s@]+)*)|(.+))@(([^<>()[\],;:\s@]+\.)+[^<>()[\],;:\s@]{2,})$/i;
         if (!mail || regex.test(mail) === false) {
             return false;
         }
@@ -40,7 +40,7 @@ const NewsletterForm = () => {
     return (
         <form onSubmit={onSubmit}>
             <div className="form-group">
-                <input type="email" placeholder="Your mail" className="form-control" value={mail} onChange={handleChange} required />
+                <input type="email" placeholder="Inserisci la tua email" className="form-control" value={mail} onChange={handleChange} required />
             </div>
             <Button variant={'link'} submit>Iscriviti</Button>
         </form>

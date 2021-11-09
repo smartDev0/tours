@@ -13,98 +13,114 @@ const Footer = () => (
             <Row>
                 <Col md={3}>
                     <Typography variant='heading3' className={classnames([styles.title])}>
-                        WeShoot
+                        <span style={{ color: '#ff4424' }}>We</span>Shoot
                     </Typography>
                     <ul>
                         <li>
-                            <Link to="/">
-                                Viaggi Fotografici
+                            <Link to="/viaggi-fotografici/">
+                                ✈️ Viaggi Fotografici
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
-                                Calendario Viaggi Fotografici
+                            <Link to="/viaggi-fotografici/calendario/">
+                                📅 Calendario Viaggi Fotografici
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
-                                Accademia di Fotografia
+                            <Link to="/accademia/">
+                                📚 Accademia di Fotografia
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
-                                Corsi di Fotografia
+                            <Link to="/accademia/corsi/">
+                                🎥 Corsi di Fotografia
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
-                                Diventa un master
+                            <Link to="/accademia/sistema-weshoot/">
+                                👨‍🎓 Diventa un master
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
-                                La nostra missione
+                            <Link to="https://www.iubenda.com/privacy-policy/43774671">
+                               🔐 Privacy Policy
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/gdpr">
+                              🇪🇺  GDPR
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/termini">
+                               📜 Termini e condizioni
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="https://www.iubenda.com/privacy-policy/43774671/cookie-policy">
+                               🍪 Cookie Policy
                             </Link>
                         </li>
                     </ul>
                 </Col>
                 <Col md={3}>
                     <Typography variant='heading3' className={classnames([styles.title])}>
-                        Corsi Fotografici
+                        Corsi di Fotografia
                     </Typography>
                     <ul>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/corso-base-di-fotografia/">
+                                Corso Fotografia di Base
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="https://www.weshoot.it/accademia/corsi/la-fotografia-notturna/">
                                 Fotografia Notturna
                             </Link>
                         </li>
+
                         <li>
-                            <Link to="/">
-                                Fotografia di Base
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/lightroom-efficace/">
                                 Lightroom Efficace
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/fotografia-landscape-fine-art/">
                                 Landscape Fine Art
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/luna-cinerea/">
                                 Fotografare la Luna
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/sviluppo-della-via-lattea-land-cielo/">
                                 Sviluppo Via Lattea
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/lunghe-esposizioni/">
                                 Lunghe Esposizioni
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/workflow-per-editare-un-timelapse/">
                                 Time Lapse
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/pianificare-la-fotografia-di-paesaggio/">
                                 Pianificare una Foto
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/come-si-realizzano-vlog-videomaking/">
                                 vlog e Videomaking
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="https://www.weshoot.it/accademia/corsi/fotografare-la-luna/">
                                 Fotografare la Luna
                             </Link>
                         </li>
@@ -116,32 +132,32 @@ const Footer = () => (
                     </Typography>
                     <ul>
                         <li>
-                            <Link to="/">
+                            <Link to="/blog">
                                 Blog di Fotografia
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/blog/category/tutorial/">
                                 Tutorials
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="blog/category/rumors/">
                                 Rumors
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/blog/category/recensioni/">
                                 Recensioni
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/blog/category/scuola-di-fotografia/">
                                 Scuola di fotografia
                             </Link>
                         </li>
                         <li>
-                            <Link to="/">
+                            <Link to="/blog/fotografi-e-partners-ufficiali/">
                                 Partners
                             </Link>
                         </li>
