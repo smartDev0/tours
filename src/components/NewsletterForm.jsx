@@ -14,7 +14,6 @@ const NewsletterForm = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         if (emailValidation) {
-            console.log(mail)
             const result = await fetch(`${process.env.GATSBY_API_URL}/newsletter`, {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
