@@ -6,7 +6,7 @@ import Link from '../components/Link';
 import useScrollPos from './../hooks/useScrollPos';
 import * as styles from './Header.module.scss'
 import Logo from '../../static/logo/WeShoot-logo-extended-black.svg'
-import {useTranslation} from "gatsby-plugin-react-i18next";
+import { useTranslation } from "react-i18next"
 
 const Header = ({ siteTitle }) => {
     const [isScrolled, setScrolled] = React.useState(false);

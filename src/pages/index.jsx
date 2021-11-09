@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Col, Container, Row } from 'react-bootstrap';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useTranslation } from "react-i18next"
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';

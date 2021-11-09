@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import PropTypes from "prop-types";
 import Footer from './Footer';
 import Header from './Header';
-
+import { withTrans } from '../i18n/withTrans'
 import * as styles from './Layout.module.scss';
 
 const propTypes = {
@@ -37,4 +37,4 @@ const Layout = ({ location, children }) => (
 Layout.propTypes = propTypes;
 Layout.defaultProps = defaultProps;
 
-export default Layout;
+export default withTrans(Layout);

@@ -60,24 +60,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-theme-i18n`,
-      options: {
-        defaultLang: defaultLanguage,
-        configPath: require.resolve(`./i18n/config.json`),
-      },
-    },
-    {
-      resolve: `gatsby-theme-i18n-react-i18next`,
-      options: {
-        locales: `./i18n/locales`,
-        i18nextOptions: {
-          ns: ["translation"],
-          fallbackLng: defaultLanguage,
-          supportedLngs: supportedLanguages,
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: process.env.AWS_S3_BUCKET || "weshoot.it",
