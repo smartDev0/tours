@@ -1,6 +1,6 @@
 import * as React from "react"
-import {Col, Container, Row} from 'react-bootstrap';
-import {useTranslation} from 'gatsby-plugin-react-i18next';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useTranslation } from 'gatsby-plugin-react-i18next';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -40,7 +40,6 @@ const IndexPage = () => {
     const workshopResult = await fetch(
       `${process.env.GATSBY_API_URL}/workshop`
     ).then(res => res.json())
-    console.log(workshopResult)
     setWorkshops(workshopResult)
 
     const workshopImageResult = await fetch(`${process.env.GATSBY_API_URL}/workshop_image/getWithType`, {
@@ -59,9 +58,8 @@ const IndexPage = () => {
   }, [])
 
   const getDays = (end, start) => {
-    const diffTime = Math.abs(new Date(end).getDate() - new Date(start).getDate());
+    const diffTime = Math.abs(new Date(end).getTime() - new Date(start).getTime());
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    console.log(diffDays)
     return diffDays
   }
   return (
@@ -129,20 +127,23 @@ const IndexPage = () => {
           </div>
           {workshops && workshops.length > 0 && (
             <Row>
-              {workshops.map(workshop => (
-                <Col lg={4} md={6} className="zoomIn mb-2" key={workshop.id}>
-                  <TripCard
-                    link='/'
-                    title={workshop.name}
-                    day={getDays(workshop.end, workshop.start)}
-                    price={workshop.price}
-                    url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
-                  >
-                    <Button variant={'linkOutline'}>Vedi date</Button>
-                    <Button variant={'link'} to={workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
-                  </TripCard>
-                </Col>
-              ))}
+              {workshops.map(workshop => {
+                return (
+                  <Col lg={4} md={6} className="zoomIn mb-2" key={workshop.id}>
+                    <TripCard
+                      link='/'
+                      title={workshop.name}
+                      day={getDays(workshop.end, workshop.start)}
+                      price={workshop.price}
+                      url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
+                    >
+                      <Button variant={'linkOutline'}>Vedi date</Button>
+                      <Button variant={'link'} to={workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
+                    </TripCard>
+                  </Col>
+                )
+              })
+              }
             </Row>
           )}
         </Container>
