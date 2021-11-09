@@ -141,14 +141,14 @@ const IndexPage = () => {
                 return (
                   <Col lg={4} md={6} className="zoomIn mb-2" key={workshop.id}>
                     <TripCard
-                      link={'viaggi-fotografici/destinazioni' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}
+                      link={'/viaggi-fotografici/destinazioni/' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}
                       title={workshop.name}
                       day={getDays(workshop.end, workshop.start)}
                       price={workshop.price}
                       url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
                     >
                       <Button variant={'linkOutline'}>Vedi date</Button>
-                      <Button variant={'link'} to={'viaggi-fotografici/destinazioni' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
+                      <Button variant={'link'} to={'/viaggi-fotografici/destinazioni/' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
                     </TripCard>
                   </Col>
                 )
