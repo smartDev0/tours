@@ -1,6 +1,6 @@
 import * as React from "react"
-import { Col, Container, Row } from 'react-bootstrap';
-import { useTranslation } from 'gatsby-plugin-react-i18next';
+import {Col, Container, Row} from 'react-bootstrap';
+import {useTranslation} from 'gatsby-plugin-react-i18next';
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -197,7 +197,7 @@ const IndexPage = () => {
                 <li><span>2</span>Condividi con la community le tue foto</li>
                 <li><span>3</span>Diventa un master</li>
               </ul>
-              <Button variant={'link'} to='/'>Inizia Gratis</Button>
+              <Button variant={'link'} to='/accademia/'>Inizia Gratis</Button>
             </Col>
           </Row>
         </Container>
