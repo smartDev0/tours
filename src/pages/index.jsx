@@ -154,7 +154,7 @@ const IndexPage = () => {
                       url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
                     >
                       <Button variant={'linkOutline'}>Vedi date</Button>
-                      <Button variant={'link'} to={workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
+                      <Button variant={'link'} to={'viaggi-fotografici/destinazioni' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
                     </TripCard>
                   </Col>
                 )
