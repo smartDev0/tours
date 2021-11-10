@@ -1,5 +1,13 @@
 {
 	"ui": {
+		"components": {
+			"tripCard": {
+				"days": "Days",
+				"showDates": "Discover Dates",
+				"showTrip": "Discover Tour",
+				"startFrom": "Starts from"
+			}
+		},
 		"layout": {
 			"header": {
 				"academy": "Photography Academy",

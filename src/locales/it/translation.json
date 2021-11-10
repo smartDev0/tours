@@ -1,5 +1,13 @@
 {
 	"ui": {
+		"components": {
+			"tripCard": {
+				"days": "Giorni",
+				"showDates": "Vedi Date",
+				"showTrip": "Vedi Viaggio",
+				"startFrom": "A partire da"
+			}
+		},
 		"layout": {
 			"header": {
 				"academy": "Accademia Fotografica",

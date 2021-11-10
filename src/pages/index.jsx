@@ -22,10 +22,14 @@ const IndexPage = () => {
   const { t } = useTranslation();
 
   React.useEffect(async () => {
-    const result = await fetch(
+    const categoriesResults = await fetch(
       `${process.env.GATSBY_API_URL}/category`
     ).then(res => res.json())
-    setCategories(result)
+    const categories = await Promise.all(categoriesResults.map(async (item) => {
+      item.img = item.img ? process.env.GATSBY_WESHOOT_AWS_URL + item.img : null;
+      return item
+    }))
+    setCategories(categories)
 
     const courseResult = await fetch(
       `${process.env.GATSBY_API_URL}/course`
@@ -48,7 +52,7 @@ const IndexPage = () => {
       const img = new Image();
       img.src = process.env.GATSBY_WESHOOT_AWS_URL + item.file_id;
       await img.decode();
-      const { height, width } = await calculateRatio(img.height, img.width)
+      const { height, width } = calculateRatio(img.height, img.width)
       item.height = height
       item.width = width
       return item
@@ -59,7 +63,7 @@ const IndexPage = () => {
 
   const calculateRatio = (height, width) => {
     for (var num = height; num > 1; num--) {
-      if ((width % num) == 0 && (height % num) == 0) {
+      if ((width % num) === 0 && (height % num) === 0) {
         width = width / num;
         height = height / num;
       }
@@ -69,8 +73,7 @@ const IndexPage = () => {
 
   const getDays = (end, start) => {
     const diffTime = Math.abs(new Date(end).getTime() - new Date(start).getTime());
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays
+    return Math.ceil(diffTime / (1000 * 60 * 60 * 24))
   }
   return (
     <>
@@ -146,8 +149,8 @@ const IndexPage = () => {
                       price={workshop.price}
                       url={process.env.GATSBY_WESHOOT_AWS_URL + workshop.file_id}
                     >
-                      <Button variant={'linkOutline'}>Vedi date</Button>
-                      <Button variant={'link'} to={'/viaggi-fotografici/destinazioni/' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>Vedi viaggio</Button>
+                      <Button variant={'linkOutline'}>{t('ui.components.tripCard.showDates')}</Button>
+                      <Button variant={'link'} to={'/viaggi-fotografici/destinazioni/' + workshop.url_original + '/' + workshop.place_url_original + '/' + workshop.w_name}>{t('ui.components.tripCard.showTrip')}</Button>
                     </TripCard>
                   </Col>
                 )
