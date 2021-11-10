@@ -1,5 +1,5 @@
-import { OpenGraphTypeEnum, OpenGraphTypeObject } from "app-types/seo";
-import { isISO8601 } from "utils/date";
+import {OpenGraphTypeEnum, OpenGraphTypeObject} from "/src/app-types/seo";
+import {isISO8601} from "/src/utils/date";
 
 export const getOpenGraphTypeMetas = (
   openGraphTypeObject?: OpenGraphTypeObject

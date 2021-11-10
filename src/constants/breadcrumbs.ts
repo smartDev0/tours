@@ -1,4 +1,4 @@
-import {BreadCrumb} from "components/core/Breadcrumbs";
+import {BreadCrumb} from "./../components/core/Breadcrumbs";
 
 export const HOME_BREADCRUMB: BreadCrumb = {
   name: "Weshoot",
