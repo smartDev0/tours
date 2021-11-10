@@ -3,7 +3,7 @@
 		"components": {
 			"tripCard": {
 				"days": "Days",
-				"showDates": "Discover Dates",
+				"showDates": "🔍 Dates",
 				"showTrip": "Discover Tour",
 				"startFrom": "Starts from"
 			}

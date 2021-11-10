@@ -3,7 +3,7 @@
 		"components": {
 			"tripCard": {
 				"days": "Giorni",
-				"showDates": "Vedi Date",
+				"showDates": "🔍 Date",
 				"showTrip": "Vedi Viaggio",
 				"startFrom": "A partire da"
 			}
