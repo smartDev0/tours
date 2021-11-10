@@ -4,10 +4,10 @@ i18next.init({
     fallbackLng: 'it',
     resources: {
         'it': {
-            translations: require('../locales/it/translation.json')
+            translations: require('./locales/it/translation.json')
         },
         'en': {
-            translations: require('../locales/en/translation.json')
+            translations: require('./locales/en/translation.json')
         }
     },
     ns: ['translations'],

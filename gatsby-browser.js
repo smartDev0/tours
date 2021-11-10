@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+const { EVENT_PAGE_VIEW } = require("./src/constants/events");
+const Cookies = require("universal-cookie").default;
 
-// You can delete this file if you're not using it
+exports.onRouteUpdate = ({ location }) => {
+    const cookies = new Cookies(document.cookie);
+    const rawCookies = {};
+
+
+    if (window) {
+        if (window.customerly) {
+            window.customerly.update();
+        }
+
+    }
+};

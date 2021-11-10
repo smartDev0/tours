@@ -1,0 +1,128 @@
+[
+  {
+    "fromPath": "/en",
+    "toPath": "/",
+    "isPermanent": true,
+    "withLanguage": false
+  },
+  {
+    "fromPath": "/home",
+    "toPath": "/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/live-chat-software-for-customer-support",
+    "toPath": "/features/live-chat/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/email-marketing-newsletter-template-builder",
+    "toPath": "/features/email-template-builder/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/marketing-funnel",
+    "toPath": "/features/marketing-funnel/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/survey-online-tool-software",
+    "toPath": "/features/surveys/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/survey-online-tool",
+    "toPath": "/features/surveys/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/stories",
+    "toPath": "/success-stories/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/knowledgebase-help-center-software-platform",
+    "toPath": "/features/help-center/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/customers-analysis-segmentation-business-intelligence",
+    "toPath": "/features/audience-segmentation/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/customer-satisfaction-net-promoter-score",
+    "toPath": "/features/net-promoter-score/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/customer-support-video-live-chat-software",
+    "toPath": "/features/video-live-chat/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/customer-support-live-chat",
+    "toPath": "/features/live-chat/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/customer-support-live-chat-software",
+    "toPath": "/features/live-chat/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/marketing-funnel-automation",
+    "toPath": "/features/marketing-funnel/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/visual-marketing-sales-funnel-automation",
+    "toPath": "/features/marketing-funnel/",
+    "isPermanent": true,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/discover/live-chat-di-fatture-in-cloud/",
+    "toPath": "/add-live-chat/",
+    "isPermanent": true,
+    "withLanguage": false
+  },
+  {
+    "fromPath": "/en",
+    "toPath": "/",
+    "isPermanent": true,
+    "withLanguage": false
+  },
+  {
+    "fromPath": "/en/pricing",
+    "toPath": "/pricing",
+    "isPermanent": true,
+    "withLanguage": false
+  },
+  {
+    "fromPath": "/github",
+    "toPath": "/",
+    "isPermanent": false,
+    "withLanguage": true
+  },
+  {
+    "fromPath": "/revolut",
+    "toPath": "/",
+    "isPermanent": false,
+    "withLanguage": true
+  }
+]
