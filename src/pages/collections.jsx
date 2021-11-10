@@ -74,10 +74,10 @@ const CollectionsPage = () => {
             <Col lg={12}>
               <div className="intro_title text-center">
                 <Typography className="animated fadeInDown" variant='heading1'>
-                  Tutte le collezioni di viaggi
+                  Tutte le collezioni di viaggi fotografici
                 </Typography>
                 <Typography className="animated fadeInDown" variant='heading4'>
-                  WeShoot / Viaggi Fotografici / Collezioni / Collection Name
+                  WeShoot / Viaggi Fotografici / Collezioni
                 </Typography>
               </div>
             </Col>
