@@ -14,6 +14,8 @@
 		},
 		"pages": {
 			"home": {
+				"discoverCourses": "Discover Courses",
+				"discoverTrips": "Discover Photo Tours",
 				"title": "Photograph with people who share your same passion"
 			}
 		}

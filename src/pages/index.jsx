@@ -1,7 +1,7 @@
 import * as React from "react"
-import { Col, Container, Row } from 'react-bootstrap';
-import { useTranslation } from "react-i18next"
-import { StaticImage } from "gatsby-plugin-image"
+import {Col, Container, Row} from 'react-bootstrap';
+import {useTranslation} from "react-i18next"
+import {StaticImage} from "gatsby-plugin-image"
 import SEO from "../components/seo"
 import BackgroundVideo from '../components/BackgroundVideo';
 import Typography from '../components/Typography';
@@ -85,10 +85,9 @@ const IndexPage = () => {
                 <Typography className="animated fadeInDown" variant='heading1'>
                   {t('ui.pages.home.title')}
                 </Typography>
-
                 <Container fluid="xl" className="pt-8 pb-8">
-                  <Button variant={'outline'} className={'mb-1'}>Scopri i corsi </Button>
-                  <Button variant={'intro'} className={'mb-1'}>Scopri i Viaggi </Button>
+                  <Button variant={'outline'} className={'mb-1'}>{t('ui.pages.home.discoverCourses')}  </Button>
+                  <Button variant={'intro'} className={'mb-1'}>{t('ui.pages.home.discoverTrips')}  </Button>
                 </Container>
               </div>
             </Col>
@@ -125,7 +124,7 @@ const IndexPage = () => {
           }
         </Container>
       </div>
-      <div style={{ backgroundColor: 'white' }}>
+      <div style={{ backgroundColor: '#f1f1f1' }}>
         <Container fluid="xl" className="pt-8 pb-8">
           <div className="main-title">
             <Typography variant='heading2'>
